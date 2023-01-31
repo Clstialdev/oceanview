@@ -5,8 +5,11 @@ Project uses the `t3 stack`.
 ## How to run dev?
 
 1-git clone this repo
+
 2-run 'yarn'
+
 3-run 'yarn dev'
+
 
 ## How do I deploy this?
 
