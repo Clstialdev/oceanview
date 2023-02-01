@@ -3,7 +3,7 @@ import { type NextPage } from "next";
 
 const Header: NextPage = () => {
   return (
-    <header className="flex h-[100px] w-full items-center justify-between bg-opacity-20 bg-gradient-to-b from-black to-white px-[7%] [&>*]:text-white">
+    <header className="absolute top-0 left-0 right-0 flex h-[100px] w-full items-center justify-between bg-opacity-20 bg-gradient-to-b from-black to-white px-[7%] backdrop-blur-md [&>*]:text-white">
       {/* Left Side (branding) */}
       <div className="flex items-center justify-center gap-2">
         {/* Logo */}
