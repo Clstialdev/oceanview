@@ -14,20 +14,24 @@ const SectionHeading: NextPage<SectionHeadingProps> = ({
   uppercased,
 }) => {
   return (
-    <div>
+    <div className="mb-4">
       {/* Ornament */}
-      <h2 className="text-xl uppercase">{ornament}</h2>
+      <h2 className="font-oregon-demibold mb-2 text-xl uppercase text-turqoise">
+        {ornament}
+      </h2>
 
       {/* Title */}
       <h1
         style={{ textTransform: uppercased ? "uppercase" : "none" }}
-        className="text-6xl"
+        className="font-oregon-demibold text-6xl text-beige"
       >
         {title}
       </h1>
 
       {/* description */}
-      <h2 className="text-xl uppercase">{description}</h2>
+      <h2 className="font-oregon-demibold mt-1 text-xl uppercase text-turqoise">
+        {description}
+      </h2>
     </div>
   );
 };

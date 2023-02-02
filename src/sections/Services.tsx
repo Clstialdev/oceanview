@@ -1,36 +1,43 @@
-import Link from "next/link";
 import { type NextPage } from "next";
-import Image from "next/image";
 import SectionHeading from "../components/SectionHeading";
 import ServiceCard from "../components/ServiceCard";
+import Image from "next/image";
 
-const About: NextPage = () => {
+const Services: NextPage = () => {
   return (
-    <div className="w-full py-12 px-[10%]">
+    <div className="relative w-full bg-services-dark px-[10%] py-48">
       {/* Transition 'rocks' Image */}
-      <div className="absolute top-0 left-0 right-0 h-[350px] w-full">
-        {/* <Image
-          src=""
+      <div className="absolute top-0 left-0 right-0 w-full">
+        <Image
+          src="/Transition2.png"
           height={3000} //this is for nextjs image optimization
           width={3000} //this is for nextjs image optimization
-          style={{ objectFit: "contain", height: "100%", width: "100%" }}
+          style={{
+            objectFit: "contain",
+            height: "100%",
+            width: "100%",
+            scale: "-1",
+          }}
           alt="Transition Image"
           unoptimized //this is to keep the image clarity
-        /> */}
+        />
       </div>
 
       {/* Section Heading */}
-      <SectionHeading title="services" />
+      <SectionHeading title="Services" />
 
       {/* Service Cards */}
-      <div className="grid grid-cols-4 gap-4">
-        <ServiceCard image="" title="Game Design" />
-        <ServiceCard image="" title="Mobile Development" />
-        <ServiceCard image="" title="Monetization" />
-        <ServiceCard image="" title="Game Design, Advice & Guidance" />
+      <div className="mt-12 grid grid-cols-2 gap-10">
+        <ServiceCard image="/services/gamedes.png" title="Game Design" />
+        <ServiceCard image="/services/mobile.png" title="Mobile Development" />
+        <ServiceCard image="/services/monetization.png" title="Monetization" />
+        <ServiceCard
+          image="/services/octopus.png"
+          title="Game Design, Advice & Guidance"
+        />
       </div>
     </div>
   );
 };
 
-export default About;
+export default Services;
