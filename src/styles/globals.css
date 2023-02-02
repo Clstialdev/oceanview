@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: Oregon;
+  src: url(../../public/fonts/Oregon.ttf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: Oregon;
+  src: url(../../public/fonts/OregonLight.ttf);
+  font-weight: lighter;
+}
+@font-face {
+  font-family: Oregon;
+  src: url(../../public/fonts/OregonDemiBold.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: Alatsi;
+  src: url(../../public/fonts/Alatsi.ttf);
+  font-weight: normal;
+}
+
+.font-oregon {
+  font-family: Oregon;
+  font-weight: normal;
+}
+
+.font-oregon-light {
+  font-family: Oregon;
+  font-weight: lighter;
+}
+
+.font-oregon-demibold {
+  font-family: Oregon;
+  font-weight: bold;
+}
+
+.font-alatsi {
+  font-family: Alatsi;
+  font-weight: normal;
+}
