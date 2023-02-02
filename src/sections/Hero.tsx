@@ -6,7 +6,7 @@ const Hero: NextPage = () => {
     <div className="relative h-screen w-full overflow-hidden">
       {/* BG IMG */}
       <Image
-        src="/HeroBGSmall.png"
+        src="/final.png"
         height={3000} //this is for nextjs image optimization
         width={3000} //this is for nextjs image optimization
         style={{ objectFit: "cover", height: "100%", width: "100%" }}

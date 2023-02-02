@@ -28,10 +28,23 @@ const Services: NextPage = () => {
 
       {/* Service Cards */}
       <div className="mt-12 grid grid-cols-2 gap-10">
-        <ServiceCard image="/services/gamedes.png" title="Game Design" />
-        <ServiceCard image="/services/mobile.png" title="Mobile Development" />
-        <ServiceCard image="/services/monetization.png" title="Monetization" />
         <ServiceCard
+          key={1}
+          image="/services/gamedes.png"
+          title="Game Design"
+        />
+        <ServiceCard
+          key={2}
+          image="/services/mobile.png"
+          title="Mobile Development"
+        />
+        <ServiceCard
+          key={3}
+          image="/services/monetization.png"
+          title="Monetization"
+        />
+        <ServiceCard
+          key={4}
           image="/services/octopus.png"
           title="Game Design, Advice & Guidance"
         />
