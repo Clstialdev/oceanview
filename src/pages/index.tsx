@@ -6,6 +6,7 @@ import Hero from "../sections/Hero";
 import Projects from "../sections/Projects";
 import Services from "../sections/Services";
 import Stats from "../sections/Stats";
+import Testimonials from "../sections/Testimonials";
 
 const Home: NextPage = () => {
   return (
@@ -31,8 +32,12 @@ const Home: NextPage = () => {
 
         {/* Section 4 */}
         <Stats />
+
         {/* Section 5 */}
         <Projects />
+
+        {/* Section 6 */}
+        <Testimonials />
       </main>
     </>
   );
