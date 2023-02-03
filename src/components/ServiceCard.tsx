@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Image from "next/image";
+import { motion, useMotionValue } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 interface ServiceCardProps {
@@ -16,43 +17,53 @@ const ServiceCard: NextPage<ServiceCardProps> = ({
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
-  const animateCard = (e: MouseEvent) => {
+  const [offsetX, setOffsetX] = useState(0);
+  const [offsetY, setOffsetY] = useState(0);
+
+  const getMouseLocation = (e: MouseEvent) => {
     const cardElement = cardRef.current as HTMLDivElement;
-    const x = e.clientX - (cardElement.offsetLeft ?? 0);
-    const y = e.clientY - (cardElement.offsetTop ?? 0);
-    cardElement.style.transform = `rotate(${x * 0.01}deg) rotateZ(${
-      y * 0.1
-    }deg)`;
+
+    const X = e.pageX - cardElement.offsetLeft - cardElement.offsetWidth / 2;
+    const Y = e.screenY - cardElement.offsetTop - cardElement.offsetHeight / 2;
+
+    const ySign = Y >= 0 ? 1 : -1;
+    const xSign = X >= 0 ? 1 : -1;
+
+    const correctedX = -X * ySign;
+    const correctedY = Y * xSign;
+
+    setOffsetX(correctedX);
+    setOffsetY(correctedY);
+    console.log("X=", correctedX);
+    console.log("Y=", correctedY);
   };
 
-  const animateCardDefault = (e: MouseEvent) => {
+  const animateCard = (e: MouseEvent) => {
     const cardElement = cardRef.current as HTMLDivElement;
-    const x = e.clientX - (cardElement.offsetLeft ?? 0);
+    const x = e.pageX - (cardElement.offsetLeft ?? 0);
     const y = e.clientY - (cardElement.offsetTop ?? 0);
-    cardElement.style.transform = `rotate(${0}deg) rotateZ(${0}deg)`;
   };
 
   useEffect(() => {
     const cardElement = cardRef.current as HTMLDivElement;
-    console.log(cardElement.offsetLeft);
-
-    cardElement.addEventListener("mouseover", (e) => animateCard(e));
-    cardElement.addEventListener("mouseleave", (e) => animateCardDefault(e));
+    cardElement.addEventListener("mousemove", (e) => getMouseLocation(e));
+    cardElement.addEventListener("mouseout", () => {
+      setOffsetX(0);
+      setOffsetY(0);
+    });
 
     return () => {
-      cardElement.removeEventListener("mouseover", (e) => animateCard(e));
-      cardElement.removeEventListener("mouseleave", (e) =>
-        animateCardDefault(e)
-      );
+      cardElement.removeEventListener("mousemove", (e) => getMouseLocation(e));
+      cardElement.removeEventListener("mouseout", () => {
+        setOffsetX(0);
+        setOffsetY(0);
+      });
     };
   }, []);
 
-  const distance = () => {
-    console.log(cardRef.current);
-  };
-
   return (
-    <div
+    <motion.div
+      whileHover={{ rotateZ: offsetX * 0.015, skewY: offsetY * 0.01 }}
       className="relative h-[400px] w-[40vw] max-w-[580px] rounded-lg bg-services-light p-8"
       ref={cardRef}
     >
@@ -76,7 +87,7 @@ const ServiceCard: NextPage<ServiceCardProps> = ({
           {description}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

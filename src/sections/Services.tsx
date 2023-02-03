@@ -33,7 +33,7 @@ const Services: NextPage = () => {
           image="/services/gamedes.png"
           title="Game Design"
         />
-        <ServiceCard
+        {/* <ServiceCard
           key={2}
           image="/services/mobile.png"
           title="Mobile Development"
@@ -47,7 +47,7 @@ const Services: NextPage = () => {
           key={4}
           image="/services/octopus.png"
           title="Game Design, Advice & Guidance"
-        />
+        /> */}
       </div>
     </div>
   );
