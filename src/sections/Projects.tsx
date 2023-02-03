@@ -18,6 +18,12 @@ const CONTRACT_AND_EMPLOYMENT = [
     logo: "/projects/runescape/logo.png",
     image: "/projects/runescape/bg.png",
   },
+  { link: "", logo: "/projects/domi/logo.png", image: "/projects/domi/bg.png" },
+  {
+    link: "",
+    logo: "/projects/runescape/logo.png",
+    image: "/projects/runescape/bg.png",
+  },
 ];
 
 const Projects: NextPage = () => {

@@ -71,9 +71,15 @@ export const ThreeDeeCardWrapper: NextPage<ThreeDeeCardWrapperProps> = ({
 
 interface SheenEffectProps {
   cardRef: RefObject<HTMLDivElement>;
+  strength?: number;
+  rgbColor?: string;
 }
 
-export const SheenEffect: NextPage<SheenEffectProps> = ({ cardRef }) => {
+export const SheenEffect: NextPage<SheenEffectProps> = ({
+  cardRef,
+  strength = 0.15,
+  rgbColor = "81,130,118",
+}) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -118,12 +124,12 @@ export const SheenEffect: NextPage<SheenEffectProps> = ({ cardRef }) => {
   const sheenOpacity = useTransform(
     sheenPosition,
     [-100, 100, -400],
-    [0, 0.15, 0]
+    [0, strength, 0]
   );
   const sheenGradient = useMotionTemplate`linear-gradient(
       55deg,
       transparent,
-      rgba(81 130 118 / ${sheenOpacity}) ${sheenPosition}%,
+      rgba(${rgbColor}, ${sheenOpacity}) ${sheenPosition}%,
       transparent)`;
 
   return (

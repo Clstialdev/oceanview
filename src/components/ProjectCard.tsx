@@ -16,7 +16,11 @@ const ProjectCard: NextPage<ProjectCardProps> = ({ project }) => {
         className="relative h-[330px] w-[240px] overflow-hidden rounded"
         ref={cardRef}
       >
-        <SheenEffect cardRef={cardRef} />
+        <SheenEffect
+          cardRef={cardRef}
+          strength={0.2}
+          rgbColor={"255,255,255"}
+        />
 
         {/* Project Image */}
         <Image
