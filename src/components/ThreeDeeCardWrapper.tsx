@@ -88,8 +88,8 @@ export const SheenEffect: NextPage<SheenEffectProps> = ({
     const handleMouseMove = (e: MouseEvent) => {
       const cardRect = cardElement.getBoundingClientRect();
 
-      const X = e.screenX - cardRect.left - cardElement.offsetWidth / 2;
-      const Y = e.screenY - cardRect.top - cardElement.offsetHeight / 2;
+      const X = e.screenX - cardRect.left - cardElement.offsetWidth / 8;
+      const Y = e.screenY - cardRect.top - cardElement.offsetHeight / 2.5;
 
       animate(mouseX, X);
       animate(mouseY, Y);
@@ -136,6 +136,63 @@ export const SheenEffect: NextPage<SheenEffectProps> = ({
     <motion.div
       className="absolute left-0 top-0 right-0 bottom-0"
       style={{ backgroundImage: sheenGradient }}
+    ></motion.div>
+  );
+};
+
+interface GlowEffectProps {
+  cardRef: RefObject<HTMLDivElement>;
+  strength?: number;
+  rgbaColor?: string;
+}
+
+export const GlowEffect: NextPage<GlowEffectProps> = ({
+  cardRef,
+  strength = 0.15,
+  rgbaColor = "rgba(81,130,118,0.2)",
+}) => {
+  const x = useMotionValue(200);
+  const y = useMotionValue(100);
+  const opacity = useMotionValue(0);
+
+  useEffect(() => {
+    const cardElement = cardRef.current as HTMLDivElement;
+    const handleMouseMove = (e: MouseEvent) => {
+      const cardRect = cardElement.getBoundingClientRect();
+
+      const X = e.screenX - cardRect.left - 100 - 300 / 2;
+      const Y = e.screenY - cardRect.top - 150 - 300 / 2;
+
+      animate(x, X);
+      animate(y, Y);
+      animate(opacity, 1);
+    };
+
+    const handleReset = () => {
+      // animate(x, -200);
+      // animate(y, -200);
+      animate(opacity, 0);
+    };
+
+    if (typeof window === "undefined") return;
+    cardElement.addEventListener("mousemove", handleMouseMove);
+    cardElement.addEventListener("mouseleave", handleReset);
+    return () => {
+      cardElement.removeEventListener("mousemove", handleMouseMove);
+      cardElement.removeEventListener("mouseleave", handleReset);
+    };
+  }, []);
+
+  return (
+    <motion.div
+      className="set absolute h-[300px] w-[300px] rounded-full blur-[100px]"
+      style={{
+        x,
+        y,
+        opacity,
+        zIndex: -1,
+        backgroundColor: `${rgbaColor}`,
+      }}
     ></motion.div>
   );
 };
