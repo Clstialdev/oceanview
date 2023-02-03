@@ -38,29 +38,54 @@ interface StatCounterProps {
 
 const StatCounter: NextPage<StatCounterProps> = ({ statsRef, stat }) => {
   const [value, setValue] = useState(0);
+  const [counting, setCounting] = useState(true);
 
   useEffect(() => {
-    const number = +stat.value.match(/\d+/)[0];
+    if (counting) {
+      const number = +stat.value.match(/\d+/)[0];
 
-    console.log(number);
-    const counter = () => {
-      if (value < number) {
+      console.log(number);
+
+      const initialCounter = () => {
+        setCounting(true);
+        setValue(1);
+      };
+
+      const reset = () => {
+        setValue(number);
         setTimeout(() => {
-          setValue(value + 1);
-        }, stat.countTimer);
+          setCounting(false);
+        }, 700);
+      };
 
-        console.log("counter");
+      const counter = () => {
+        if (value < number) {
+          setTimeout(() => {
+            setValue(value + 1);
+          }, stat.countTimer);
+
+          console.log("counter");
+        }
+      };
+
+      if (value >= 1) {
+        counter();
       }
-    };
 
-    if (value >= 1) {
-      counter();
+      statsRef.current?.addEventListener("mouseenter", () => initialCounter());
+      statsRef.current?.addEventListener("mouseleave", () => reset());
+
+      return () => {
+        statsRef.current?.removeEventListener("mouseenter", () =>
+          initialCounter()
+        );
+
+        statsRef.current?.removeEventListener("mouseleave", () =>
+          setValue(number)
+        );
+      };
     }
-
-    statsRef.current?.addEventListener("mouseenter", () => counter());
-
-    return statsRef.current?.removeEventListener("mouseenter", () => counter());
-  }, [value]);
+  }, [value, counting, stat.value, stat.countTimer, statsRef]);
 
   return (
     <div className="flex flex-col items-center">
