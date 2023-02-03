@@ -12,7 +12,7 @@ const Header: NextPage = () => {
           <Image src="/logo.png" height={100} width={100} alt="" />
         </div>
         {/* Typography */}
-        <div>
+        <div className="mt-[9px]">
           <h1 className="font-oregon-light text-center text-[22px] uppercase">
             Ocean View
           </h1>

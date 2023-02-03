@@ -1,24 +1,53 @@
 import { type NextPage } from "next";
-import { useEffect, useRef, useState } from "react";
+import { type RefObject, useEffect, useRef, useState } from "react";
 import SectionHeading from "../components/SectionHeading";
 
 const STATS = [
-  { name: "Years Experience", value: "20+" },
-  { name: "Projects Launched", value: "30+" },
-  { name: "Millions of Players", value: "1M+" },
+  { name: "Years Experience", value: "20+", countTimer: 10 },
+  { name: "Projects Launched", value: "30+", countTimer: 10 },
+  { name: "Millions of Players", value: "2M+", countTimer: 200 },
 ];
 
 const Stats: NextPage = () => {
-  const [value, setValue] = useState(0);
-
   const statsRef = useRef<HTMLDivElement>(null);
 
+  return (
+    <div
+      className="w-full bg-gradient-to-b from-[#040D10] to-[#07041A] py-12 px-[10%]"
+      ref={statsRef}
+    >
+      {/* Section Heading */}
+      <SectionHeading title="Some Numbers" />
+
+      {/* Stats */}
+      <div className="my-20 flex w-full items-center justify-between">
+        {STATS.map((stat, index) => (
+          <StatCounter key={index} statsRef={statsRef} stat={stat} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Stats;
+
+interface StatCounterProps {
+  statsRef: RefObject<HTMLDivElement>;
+  stat: { name: string; value: string; countTimer: number };
+}
+
+const StatCounter: NextPage<StatCounterProps> = ({ statsRef, stat }) => {
+  const [value, setValue] = useState(0);
+
   useEffect(() => {
+    const number = +stat.value.match(/\d+/)[0];
+
+    console.log(number);
     const counter = () => {
-      if (value < 100) {
+      if (value < number) {
         setTimeout(() => {
           setValue(value + 1);
-        }, 2);
+        }, stat.countTimer);
 
         console.log("counter");
       }
@@ -34,26 +63,13 @@ const Stats: NextPage = () => {
   }, [value]);
 
   return (
-    <div
-      className="w-full bg-gradient-to-b from-[#040D10] to-[#07041A] py-12 px-[10%]"
-      ref={statsRef}
-    >
-      {/* Section Heading */}
-      <SectionHeading title="Some Numbers" />
-
-      {/* Stats */}
-      <div className="my-20 flex w-full items-center justify-between">
-        {STATS.map((stat, index) => (
-          <div key={index} className="flex flex-col items-center">
-            <h1 className="font-alatsi mb-2 text-8xl text-white">{value}</h1>
-            <h2 className="font-alatsi text-2xl uppercase text-[#5A88BD] lg:text-4xl">
-              {stat.name}
-            </h2>
-          </div>
-        ))}
-      </div>
+    <div className="flex flex-col items-center">
+      <h1 className="font-alatsi mb-2 text-8xl text-white">
+        {value.toString() + stat.value.replace(/[0-9]/g, "")}
+      </h1>
+      <h2 className="font-alatsi text-2xl uppercase text-[#5A88BD] lg:text-4xl">
+        {stat.name}
+      </h2>
     </div>
   );
 };
-
-export default Stats;

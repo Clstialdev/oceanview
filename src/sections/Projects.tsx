@@ -1,26 +1,33 @@
 import { type NextPage } from "next";
-import Link from "next/link";
 import ProjectCard from "../components/ProjectCard";
 import SectionHeading from "../components/SectionHeading";
 
 const FLAGSHIP_PROJECTS = [
-  { link: "", logo: "", image: "" },
-  { link: "", logo: "", image: "" },
+  { link: "", logo: "/projects/domi/logo.png", image: "/projects/domi/bg.png" },
+  {
+    link: "",
+    logo: "/projects/runescape/logo.png",
+    image: "/projects/runescape/bg.png",
+  },
 ];
 
 const CONTRACT_AND_EMPLOYMENT = [
-  { link: "", logo: "", image: "" },
-  { link: "", logo: "", image: "" },
+  { link: "", logo: "/projects/domi/logo.png", image: "/projects/domi/bg.png" },
+  {
+    link: "",
+    logo: "/projects/runescape/logo.png",
+    image: "/projects/runescape/bg.png",
+  },
 ];
 
 const Projects: NextPage = () => {
   return (
-    <div className="w-full py-12 px-[10%]">
+    <div className="w-full bg-[#07041A] py-12 px-[10%]">
       {/* Section Heading */}
       <SectionHeading title="Flagship projects" uppercased />
 
       {/* Flagship Projects */}
-      <div className="flex w-full">
+      <div className="mt-12 mb-24 flex w-full flex-wrap gap-5">
         {FLAGSHIP_PROJECTS.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
@@ -30,7 +37,7 @@ const Projects: NextPage = () => {
       <SectionHeading title="Contract and Employment" uppercased />
 
       {/* Contract and employment */}
-      <div className="flex w-full">
+      <div className="mt-12 mb-24 flex w-full flex-wrap gap-5">
         {CONTRACT_AND_EMPLOYMENT.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}

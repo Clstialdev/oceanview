@@ -3,6 +3,7 @@ import Head from "next/head";
 import Header from "../components/Header";
 import About from "../sections/About";
 import Hero from "../sections/Hero";
+import Projects from "../sections/Projects";
 import Services from "../sections/Services";
 import Stats from "../sections/Stats";
 
@@ -30,6 +31,8 @@ const Home: NextPage = () => {
 
         {/* Section 4 */}
         <Stats />
+        {/* Section 5 */}
+        <Projects />
       </main>
     </>
   );
