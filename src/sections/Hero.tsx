@@ -9,7 +9,12 @@ const Hero: NextPage = () => {
         src="/HeroBG.png"
         height={3000} //this is for nextjs image optimization
         width={3000} //this is for nextjs image optimization
-        style={{ objectFit: "cover", height: "100%", width: "100%" }}
+        style={{
+          objectFit: "cover",
+          height: "100%",
+          width: "100%",
+          marginTop: "-1px",
+        }}
         alt="Beautiful Scenery of a vintage room looking out into the ocean through open double doors"
         unoptimized //this is to keep the image clarity
       />
