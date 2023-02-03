@@ -5,7 +5,7 @@ import { ThreeDeeCardWrapper, SheenEffect } from "./ThreeDeeCardWrapper";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 interface ProjectCardProps {
-  project: { link: string; logo: string; image: string };
+  project: { link: string; logo?: string; image: string };
 }
 
 const ProjectCard: NextPage<ProjectCardProps> = ({ project }) => {
@@ -45,17 +45,19 @@ const ProjectCard: NextPage<ProjectCardProps> = ({ project }) => {
           />
 
           {/* Project Logo */}
-          <div className="lef-0 absolute top-6 right-0 h-[20%] w-full select-none">
-            <Image
-              src={project.logo}
-              height={1000} //this is for nextjs image optimization
-              width={1500} //this is for nextjs image optimization
-              style={{ objectFit: "contain", height: "100%", width: "100%" }}
-              alt=""
-              unselectable="on"
-              draggable="false"
-            />
-          </div>
+          {project.logo && (
+            <div className="lef-0 absolute top-6 right-0 h-[20%] w-full select-none">
+              <Image
+                src={project.logo}
+                height={1000} //this is for nextjs image optimization
+                width={1500} //this is for nextjs image optimization
+                style={{ objectFit: "contain", height: "100%", width: "100%" }}
+                alt=""
+                unselectable="on"
+                draggable="false"
+              />
+            </div>
+          )}
 
           {/* Details Button */}
           <div className="absolute bottom-0 flex w-full justify-center ">

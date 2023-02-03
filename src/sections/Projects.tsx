@@ -12,18 +12,18 @@ const FLAGSHIP_PROJECTS = [
 ];
 
 const CONTRACT_AND_EMPLOYMENT = [
-  { link: "", logo: "/projects/domi/logo.png", image: "/projects/domi/bg.png" },
-  {
-    link: "",
-    logo: "/projects/runescape/logo.png",
-    image: "/projects/runescape/bg.png",
-  },
-  { link: "", logo: "/projects/domi/logo.png", image: "/projects/domi/bg.png" },
-  {
-    link: "",
-    logo: "/projects/runescape/logo.png",
-    image: "/projects/runescape/bg.png",
-  },
+  { link: "", image: "/projects/pocketfactory/bg.webp" },
+  { link: "", image: "/projects/novablast/bg.webp" },
+  { link: "", image: "/projects/nub/bg.webp" },
+  { link: "", image: "/projects/stoneyvocabbuilder/bg.webp" },
+  { link: "", image: "/projects/wordfunworld/bg.webp" },
+  { link: "", image: "/projects/navigo/bg.webp" },
+];
+
+const SELF_PUBLISHED = [
+  { link: "", image: "/projects/timerunner/bg.webp" },
+  { link: "", image: "/projects/empiresrise/bg.webp" },
+  { link: "", image: "/projects/whatsthat/bg.webp" },
 ];
 
 const Projects: NextPage = () => {
@@ -45,6 +45,16 @@ const Projects: NextPage = () => {
       {/* Contract and employment */}
       <div className="mt-12 mb-24 flex w-full flex-wrap gap-5">
         {CONTRACT_AND_EMPLOYMENT.map((project, index) => (
+          <ProjectCard key={index} project={project} />
+        ))}
+      </div>
+
+      {/* Section Heading */}
+      <SectionHeading title="Self Published" uppercased />
+
+      {/* Contract and employment */}
+      <div className="mt-12 mb-24 flex w-full flex-wrap gap-5">
+        {SELF_PUBLISHED.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
       </div>
