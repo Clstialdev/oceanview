@@ -36,7 +36,11 @@ const Projects: NextPage = () => {
   return (
     <div className="w-full bg-[#07041A] py-12 px-[10%]">
       {/* Section Heading */}
-      <SectionHeading title="Flagship projects" uppercased />
+      <SectionHeading
+        title="Flagship projects"
+        uppercased
+        secondaryColor="#7B5182"
+      />
 
       {/* Flagship Projects */}
       <div className="mt-12 mb-24 flex w-full flex-wrap gap-5">
@@ -46,7 +50,11 @@ const Projects: NextPage = () => {
       </div>
 
       {/* Section Heading */}
-      <SectionHeading title="Contract and Employment" uppercased />
+      <SectionHeading
+        title="Contract and Employment"
+        uppercased
+        secondaryColor="#7B5182"
+      />
 
       {/* Contract and employment */}
       <div className="mt-12 mb-24 flex w-full flex-wrap gap-5">
@@ -56,7 +64,11 @@ const Projects: NextPage = () => {
       </div>
 
       {/* Section Heading */}
-      <SectionHeading title="Self Published" uppercased />
+      <SectionHeading
+        title="Self Published"
+        uppercased
+        secondaryColor="#7B5182"
+      />
 
       {/* Contract and employment */}
       <div className="mt-12 mb-24 flex w-full flex-wrap gap-5">

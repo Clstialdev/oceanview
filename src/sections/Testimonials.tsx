@@ -71,9 +71,13 @@ const Testimonials: NextPage = () => {
   };
 
   return (
-    <div className="relative w-full bg-gradient-to-b from-[#07041A] to-[#01090B] px-[10%] pb-24">
+    <div className="relative w-full bg-gradient-to-b from-[#07041A] to-[#000000] px-[10%] pb-64">
       {/* Section Heading */}
-      <SectionHeading title="Testimonials" />
+      <SectionHeading
+        title="Testimonials"
+        uppercased
+        secondaryColor="#7B5182"
+      />
 
       {/* Container */}
       <div className="relative mt-8 flex min-h-[200px] w-full justify-center overflow-hidden">

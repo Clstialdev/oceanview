@@ -2,6 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Header from "../components/Header";
 import About from "../sections/About";
+import Contact from "../sections/Contact";
 import Hero from "../sections/Hero";
 import Projects from "../sections/Projects";
 import Services from "../sections/Services";
@@ -38,6 +39,9 @@ const Home: NextPage = () => {
 
         {/* Section 6 */}
         <Testimonials />
+
+        {/* Section 7 */}
+        <Contact />
       </main>
     </>
   );

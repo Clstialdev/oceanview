@@ -5,6 +5,7 @@ interface SectionHeadingProps {
   title?: string;
   description?: string;
   uppercased?: boolean;
+  secondaryColor?: string;
 }
 
 const SectionHeading: NextPage<SectionHeadingProps> = ({
@@ -12,11 +13,15 @@ const SectionHeading: NextPage<SectionHeadingProps> = ({
   title = "Title Here",
   description = "Lorem Ipsum Lorem Ipsum More Lorem Yeah This is just random jargon.",
   uppercased,
+  secondaryColor = "#518276",
 }) => {
   return (
     <div className="mb-4">
       {/* Ornament */}
-      <h2 className="font-oregon-demibold mb-2 text-xl uppercase text-turqoise">
+      <h2
+        className="font-oregon-demibold mb-2 text-xl uppercase"
+        style={{ color: secondaryColor }}
+      >
         {ornament}
       </h2>
 
@@ -29,7 +34,10 @@ const SectionHeading: NextPage<SectionHeadingProps> = ({
       </h1>
 
       {/* description */}
-      <h2 className="font-oregon-demibold mt-1 text-xl uppercase text-turqoise">
+      <h2
+        className="font-oregon-demibold mt-1 text-xl uppercase"
+        style={{ color: secondaryColor }}
+      >
         {description}
       </h2>
     </div>
