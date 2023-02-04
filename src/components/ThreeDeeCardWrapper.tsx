@@ -26,8 +26,8 @@ export const ThreeDeeCardWrapper: NextPage<ThreeDeeCardWrapperProps> = ({
     const handleMouseMove = (e: MouseEvent) => {
       const cardRect = cardElement.getBoundingClientRect();
 
-      const X = e.screenX - cardRect.left - cardElement.offsetWidth / 2;
-      const Y = e.screenY - cardRect.top - cardElement.offsetHeight / 2;
+      const X = e.clientX - cardRect.left - cardElement.offsetWidth / 2;
+      const Y = e.clientY - cardRect.top - cardElement.offsetHeight / 2;
 
       const ySign = Y >= 0 ? 1 : -1;
       const xSign = X >= 0 ? 1 : -1;
@@ -88,8 +88,8 @@ export const SheenEffect: NextPage<SheenEffectProps> = ({
     const handleMouseMove = (e: MouseEvent) => {
       const cardRect = cardElement.getBoundingClientRect();
 
-      const X = e.screenX - cardRect.left - cardElement.offsetWidth / 8;
-      const Y = e.screenY - cardRect.top - cardElement.offsetHeight / 2.5;
+      const X = e.clientX - cardRect.left - cardElement.offsetWidth / 8;
+      const Y = e.clientY - cardRect.top - cardElement.offsetHeight / 2.5;
 
       animate(mouseX, X);
       animate(mouseY, Y);
@@ -160,8 +160,8 @@ export const GlowEffect: NextPage<GlowEffectProps> = ({
     const handleMouseMove = (e: MouseEvent) => {
       const cardRect = cardElement.getBoundingClientRect();
 
-      const X = e.screenX - cardRect.left - 100 - 300 / 2;
-      const Y = e.screenY - cardRect.top - 150 - 300 / 2;
+      const X = e.clientX - cardRect.left - 120 - 300 / 2;
+      const Y = e.clientY - cardRect.top - 65 - 300 / 2;
 
       animate(x, X);
       animate(y, Y);
