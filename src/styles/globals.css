@@ -42,3 +42,8 @@
   font-family: Alatsi;
   font-weight: normal;
 }
+
+body,
+html {
+  scroll-behavior: smooth !important;
+}

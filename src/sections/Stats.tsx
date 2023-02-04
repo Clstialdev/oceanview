@@ -45,8 +45,6 @@ const StatCounter: NextPage<StatCounterProps> = ({ statsRef, stat }) => {
     if (counting) {
       const number = +stat.value.match(/\d+/)[0];
 
-      console.log(number);
-
       const initialCounter = () => {
         setCounting(true);
         setValue(1);
@@ -64,8 +62,6 @@ const StatCounter: NextPage<StatCounterProps> = ({ statsRef, stat }) => {
           setTimeout(() => {
             setValue(value + 1);
           }, stat.countTimer);
-
-          console.log("counter");
         }
       };
 

@@ -39,7 +39,7 @@ const Header: NextPage = () => {
       className="fixed top-0 left-0 right-0 z-10 flex h-[100px] w-full items-center justify-between bg-gradient-to-b from-[rgba(0,0,0,0.12)] to-[rgba(255,255,255,0.12)] px-[7%] backdrop-blur [&>*]:text-white"
     >
       {/* Left Side (branding) */}
-      <div className="flex items-center justify-center gap-5">
+      <Link href="/" className="flex items-center justify-center gap-5">
         {/* Logo */}
         <div className="relative h-[60px] w-[60px]">
           <Image src="/logo.png" height={100} width={100} alt="" />
@@ -53,7 +53,7 @@ const Header: NextPage = () => {
             Games
           </h2>
         </div>
-      </div>
+      </Link>
       {/* Right Side (navigation) */}
       <nav className="font-oregon flex gap-12">
         <Link href="#projects">Projects</Link>
