@@ -41,7 +41,7 @@ const Contact: NextPage = () => {
   return (
     <div
       className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#01090B] to-[#000000] px-[5%]"
-      id="cobntact"
+      id="contact"
     >
       <motion.div
         style={{ y }}
