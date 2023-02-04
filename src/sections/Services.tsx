@@ -5,7 +5,10 @@ import Image from "next/image";
 
 const Services: NextPage = () => {
   return (
-    <div className="relative w-full bg-services-dark px-[10%] py-48">
+    <div
+      className="relative w-full bg-services-dark px-[10%] py-48"
+      id="services"
+    >
       {/* Transition 'rocks' Image */}
       <div className="absolute top-0 left-0 right-0 w-full">
         <Image

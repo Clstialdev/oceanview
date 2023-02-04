@@ -15,6 +15,7 @@ const Stats: NextPage = () => {
     <div
       className="w-full bg-gradient-to-b from-[#040D10] to-[#07041A] py-12 px-[10%]"
       ref={statsRef}
+      id="stats"
     >
       {/* Section Heading */}
       <SectionHeading title="Some Numbers" />

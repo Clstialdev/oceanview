@@ -5,7 +5,10 @@ import SectionHeading from "../components/SectionHeading";
 
 const About: NextPage = () => {
   return (
-    <div className="relative min-h-[580px] w-full bg-gradient-to-b from-[#194b51] to-[#030E12] px-[10%] pt-8 pb-12">
+    <div
+      className="relative min-h-[580px] w-full bg-gradient-to-b from-[#194b51] to-[#030E12] px-[10%] pt-8 pb-12"
+      id="about"
+    >
       {/* Section Heading */}
       <SectionHeading title="About Us" uppercased />
 

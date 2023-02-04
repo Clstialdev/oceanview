@@ -34,7 +34,7 @@ const SELF_PUBLISHED = [
 
 const Projects: NextPage = () => {
   return (
-    <div className="w-full bg-[#07041A] py-12 px-[10%]">
+    <div className="w-full bg-[#07041A] py-12 px-[10%]" id="projects">
       {/* Section Heading */}
       <SectionHeading
         title="Flagship projects"

@@ -71,7 +71,10 @@ const Testimonials: NextPage = () => {
   };
 
   return (
-    <div className="relative w-full bg-gradient-to-b from-[#07041A] to-[#000000] px-[10%] pb-64">
+    <div
+      className="relative w-full bg-gradient-to-b from-[#07041A] to-[#01090B] px-[10%] pb-64"
+      id="testimonials"
+    >
       {/* Section Heading */}
       <SectionHeading
         title="Testimonials"
@@ -189,7 +192,7 @@ const TestimonialCard: NextPage<TestimonialCardProps> = ({ testimonial }) => {
       >
         <GlowEffect
           cardRef={cardRef}
-          rgbaColor={hexToRGBA(testimonial.color, 0.2)}
+          rgbaColor={hexToRGBA(testimonial.color ?? "#ffffff", 0.2)}
         />
 
         {/* Message */}
