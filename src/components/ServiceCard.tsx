@@ -38,7 +38,7 @@ const ServiceCard: NextPage<ServiceCardProps> = ({
 
         {/* Card Details */}
         <div>
-          <h1 className="font-alatsi text-white sm:text-2xl lg:text-[27px]">
+          <h1 className="font-alatsi text-lg text-white sm:text-2xl lg:text-[27px]">
             {title}
           </h1>
           <p className="font-alatsi text-white text-opacity-70 sm:text-lg lg:text-[22px]">

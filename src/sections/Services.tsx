@@ -30,27 +30,37 @@ const Services: NextPage = () => {
       <SectionHeading title="Services" />
 
       {/* Service Cards */}
-      <div className="mt-12 grid grid-cols-2 gap-10">
-        <ServiceCard
-          key={1}
-          image="/services/gamedes.png"
-          title="Game Design"
-        />
-        <ServiceCard
-          key={2}
-          image="/services/mobile.png"
-          title="Mobile Development"
-        />
-        <ServiceCard
-          key={3}
-          image="/services/monetization.png"
-          title="Monetization"
-        />
-        <ServiceCard
-          key={4}
-          image="/services/octopus.png"
-          title="Game Design, Advice & Guidance"
-        />
+      <div className="flex w-full items-center justify-between">
+        <div className="mt-12 grid w-full grid-cols-2 gap-10">
+          <div className="flex w-full items-center justify-center">
+            <ServiceCard
+              key={1}
+              image="/services/gamedes.png"
+              title="Game Design"
+            />
+          </div>
+          <div className="flex w-full items-center justify-center">
+            <ServiceCard
+              key={2}
+              image="/services/mobile.png"
+              title="Mobile Development"
+            />
+          </div>
+          <div className="flex w-full items-center justify-center">
+            <ServiceCard
+              key={3}
+              image="/services/monetization.png"
+              title="Monetization"
+            />
+          </div>
+          <div className="flex w-full items-center justify-center">
+            <ServiceCard
+              key={4}
+              image="/services/octopus.png"
+              title="Game Design, Advice & Guidance"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
