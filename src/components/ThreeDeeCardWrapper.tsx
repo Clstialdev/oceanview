@@ -115,7 +115,7 @@ export const SheenEffect: NextPage<SheenEffectProps> = ({
   const diagonalMovement = useTransform<number, number>(
     [rotateX, rotateY],
     ([newRotateX, newRotateY]) => {
-      const position: number = newRotateX + newRotateY;
+      const position: number = (newRotateX ?? 0) + (newRotateY ?? 0);
       return position;
     }
   );

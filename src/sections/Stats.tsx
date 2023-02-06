@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { type NextPage } from "next";
 import { type RefObject, useEffect, useRef, useState } from "react";
 import SectionHeading from "../components/SectionHeading";
@@ -43,7 +44,10 @@ const StatCounter: NextPage<StatCounterProps> = ({ statsRef, stat }) => {
 
   useEffect(() => {
     if (counting) {
-      const number = +stat.value.match(/\d+/)[0];
+      const number =
+        stat.value.match(/\d+/) !== undefined
+          ? +stat.value.match(/\d+/)![0]
+          : 0;
 
       const initialCounter = () => {
         setCounting(true);

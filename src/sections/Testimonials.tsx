@@ -8,6 +8,14 @@ import {
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
+type Testimonial = {
+  icon: string;
+  author: string;
+  position: string;
+  message: string;
+  color?: string;
+};
+
 const TESTIMONIALS = [
   {
     icon: "/testimonials/TLC.webp",
@@ -136,7 +144,9 @@ const Testimonials: NextPage = () => {
               exit="exit"
               custom={animateDirection}
             >
-              <TestimonialCard testimonial={TESTIMONIALS[testimonialIndex]} />
+              <TestimonialCard
+                testimonial={TESTIMONIALS[testimonialIndex] as Testimonial}
+              />
             </motion.div>
           )}
         </AnimatePresence>
