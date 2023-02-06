@@ -80,22 +80,24 @@ const Testimonials: NextPage = () => {
 
   return (
     <div
-      className="relative w-full bg-gradient-to-b from-[#07041A] to-[#01090B] px-[10%] pb-64"
+      className="relative w-full bg-gradient-to-b from-[#07041A] to-[#01090B] pb-64"
       id="testimonials"
     >
       {/* Section Heading */}
-      <SectionHeading
-        title="Testimonials"
-        uppercased
-        secondaryColor="#7B5182"
-      />
+      <div className="px-[10%]">
+        <SectionHeading
+          title="Testimonials"
+          uppercased
+          secondaryColor="#7B5182"
+        />
+      </div>
 
       {/* Container */}
-      <div className="relative mt-8 flex min-h-[200px] w-full justify-center overflow-hidden">
+      <div className="relative mt-8 flex min-h-[200px] w-full justify-center overflow-hidden px-[10%]">
         {/* Arrow Left */}
         {testimonialIndex > 0 && (
           <div
-            className="absolute top-[calc(50%-8px)] left-0 h-[30px] w-[30px] hover:cursor-pointer"
+            className="absolute top-[calc(50%-8px)] left-0 z-30 ml-2 h-[30px] w-[30px] hover:cursor-pointer"
             onClick={() => previousTestimonial()}
           >
             <Image
@@ -115,7 +117,7 @@ const Testimonials: NextPage = () => {
         {/* Arrow Right */}
         {testimonialIndex < TESTIMONIALS.length - 1 && (
           <div
-            className="absolute top-[calc(50%-8px)] right-0 h-[30px] w-[30px] hover:cursor-pointer"
+            className="absolute top-[calc(50%-8px)] right-0 z-30 mr-2 h-[30px] w-[30px] hover:cursor-pointer"
             onClick={() => nextTestimonial()}
           >
             <Image
@@ -198,7 +200,7 @@ const TestimonialCard: NextPage<TestimonialCardProps> = ({ testimonial }) => {
     <ThreeDeeCardWrapper childRef={cardRef}>
       <div
         ref={cardRef}
-        className="relative mt-6 max-w-[1000px] overflow-hidden rounded border-r-[1px] border-t-[1px] border-l-[1px] border-white border-opacity-5 bg-[#3C3851] bg-opacity-10 py-[60px] px-[100px]"
+        className="relative mt-6 max-w-[1000px] overflow-hidden rounded border-r-[1px] border-t-[1px] border-l-[1px] border-white border-opacity-5 bg-[#3C3851] bg-opacity-10 py-[30px] px-[20px] sm:py-[60px] sm:px-[100px]"
       >
         <GlowEffect
           cardRef={cardRef}
@@ -206,7 +208,9 @@ const TestimonialCard: NextPage<TestimonialCardProps> = ({ testimonial }) => {
         />
 
         {/* Message */}
-        <p className="z-60 text-2xl text-white">{testimonial.message}</p>
+        <p className="z-60 text-base text-white sm:text-2xl">
+          {testimonial.message}
+        </p>
         {/* Author */}
         <div className="z-60 mt-8 flex space-x-3">
           {/* Left Side */}
@@ -226,12 +230,12 @@ const TestimonialCard: NextPage<TestimonialCardProps> = ({ testimonial }) => {
           {/* Right Side */}
           <div>
             <h3
-              className="font-alatsi text-2xl"
+              className="font-alatsi text-base sm:text-2xl"
               style={{ color: testimonial.color ?? "#AB88C0" }}
             >
               {testimonial.author}
             </h3>
-            <h3 className="font-alatsi text-xl text-[#8F8F8F] text-opacity-50">
+            <h3 className="font-alatsi text-sm text-[#8F8F8F] text-opacity-50 sm:text-xl">
               {testimonial.position}
             </h3>
           </div>

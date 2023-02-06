@@ -78,7 +78,7 @@ const Contact: NextPage = () => {
 
         <div className="absolute bottom-0 mb-12 flex h-[100px] w-full flex-col items-center justify-center gap-4 px-[5%] md:mb-0 md:flex-row md:justify-between md:gap-0">
           <p
-            className="w-[200px] text-xs uppercase text-white hover:cursor-pointer"
+            className="w-[200px] text-center text-xs uppercase text-white hover:cursor-pointer"
             onClick={() => scrollTop()}
           >
             Ocean View Games
@@ -100,7 +100,7 @@ const Contact: NextPage = () => {
               </div>
             </Link>
           </div>
-          <p className="w-[100px] text-xs text-white">© 2023</p>
+          <p className="w-[100px] text-center text-xs  text-white">© 2023</p>
         </div>
       </motion.div>
     </div>

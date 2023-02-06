@@ -42,7 +42,7 @@ const DepthIndicator: NextPage = () => {
   const depth = useTransform(depthValue, [0, 1], ["0%", "100%"]);
 
   return (
-    <div className="fixed right-[2%] top-1/2 z-50 flex h-[60%] max-h-[600px] w-[100px] -translate-y-[50%] ">
+    <div className="fixed right-[2%] top-1/2 z-50 hidden h-[60%] max-h-[600px] w-[100px] -translate-y-[50%] sm:flex ">
       {/* Indicator */}
       <div className="relative h-full w-1/2">
         <motion.div

@@ -21,7 +21,7 @@ const ServiceCard: NextPage<ServiceCardProps> = ({
   return (
     <ThreeDeeCardWrapper childRef={cardRef}>
       <div
-        className="relative h-[400px] w-[40vw] max-w-[580px] rounded-lg bg-services-light p-8"
+        className="relative h-[400px] w-full max-w-[580px] rounded-lg bg-services-light p-8 sm:w-[40vw]"
         ref={cardRef}
       >
         <SheenEffect cardRef={cardRef} />

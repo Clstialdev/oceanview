@@ -19,7 +19,7 @@ const SectionHeading: NextPage<SectionHeadingProps> = ({
     <div className="mb-4">
       {/* Ornament */}
       <h2
-        className="font-oregon-demibold mb-2 text-xl uppercase"
+        className="font-oregon-demibold mb-2 uppercase sm:text-xl"
         style={{ color: secondaryColor }}
       >
         {ornament}
@@ -28,14 +28,14 @@ const SectionHeading: NextPage<SectionHeadingProps> = ({
       {/* Title */}
       <h1
         style={{ textTransform: uppercased ? "uppercase" : "none" }}
-        className="font-oregon-demibold text-6xl text-beige"
+        className="font-oregon-demibold text-4xl text-beige sm:text-6xl"
       >
         {title}
       </h1>
 
       {/* description */}
       <h2
-        className="font-oregon-demibold mt-1 text-xl uppercase"
+        className="font-oregon-demibold mt-1 uppercase sm:text-xl"
         style={{ color: secondaryColor }}
       >
         {description}

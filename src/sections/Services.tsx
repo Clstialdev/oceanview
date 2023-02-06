@@ -31,7 +31,7 @@ const Services: NextPage = () => {
 
       {/* Service Cards */}
       <div className="flex w-full items-center justify-between">
-        <div className="mt-12 grid w-full grid-cols-2 gap-10">
+        <div className="mt-12 grid w-full grid-cols-1 gap-10 sm:grid-cols-2">
           <div className="flex w-full items-center justify-center">
             <ServiceCard
               key={1}

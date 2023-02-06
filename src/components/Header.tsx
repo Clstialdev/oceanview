@@ -39,23 +39,26 @@ const Header: NextPage = () => {
       className="fixed top-0 left-0 right-0 z-10 flex h-[100px] w-full items-center justify-between bg-gradient-to-b from-[rgba(0,0,0,0.12)] to-[rgba(255,255,255,0.12)] px-[7%] backdrop-blur [&>*]:text-white"
     >
       {/* Left Side (branding) */}
-      <Link href="/" className="flex items-center justify-center gap-5">
+      <Link
+        href="/"
+        className="flex items-center justify-center gap-2 sm:gap-5"
+      >
         {/* Logo */}
-        <div className="relative h-[60px] w-[60px]">
+        <div className="relative h-[40px] w-[40px] sm:h-[60px] sm:w-[60px]">
           <Image src="/logo.png" height={100} width={100} alt="" />
         </div>
         {/* Typography */}
         <div className="mt-[9px]">
-          <h1 className="font-oregon-light text-center text-[22px] uppercase">
+          <h1 className="font-oregon-light text-center text-lg uppercase sm:text-[22px]">
             Ocean View
           </h1>
-          <h2 className="font-oregon-light mb-3 text-center text-sm uppercase leading-[2px] tracking-[7px]">
+          <h2 className="font-oregon-light mb-3 text-center text-xs uppercase leading-[2px] tracking-[7px] sm:text-sm">
             Games
           </h2>
         </div>
       </Link>
       {/* Right Side (navigation) */}
-      <nav className="font-oregon flex gap-12">
+      <nav className="font-oregon hidden gap-12 sm:flex">
         <Link href="#projects">Projects</Link>
         <Link href="#services">Services</Link>
         <Link href="#team">Team</Link>

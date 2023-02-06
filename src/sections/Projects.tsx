@@ -43,7 +43,7 @@ const Projects: NextPage = () => {
       />
 
       {/* Flagship Projects */}
-      <div className="mt-12 mb-24 flex w-full flex-wrap gap-5">
+      <div className="mt-12 mb-24 flex w-full flex-wrap justify-center gap-5 sm:justify-start">
         {FLAGSHIP_PROJECTS.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
@@ -57,7 +57,7 @@ const Projects: NextPage = () => {
       />
 
       {/* Contract and employment */}
-      <div className="mt-12 mb-24 flex w-full flex-wrap gap-5">
+      <div className="mt-12 mb-24 flex w-full flex-wrap justify-center gap-5 sm:justify-start">
         {CONTRACT_AND_EMPLOYMENT.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
@@ -71,7 +71,7 @@ const Projects: NextPage = () => {
       />
 
       {/* Contract and employment */}
-      <div className="mt-12 mb-24 flex w-full flex-wrap gap-5">
+      <div className="mt-12 mb-24 flex w-full flex-wrap justify-center gap-5 sm:justify-start">
         {SELF_PUBLISHED.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}

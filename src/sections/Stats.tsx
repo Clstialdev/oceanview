@@ -22,7 +22,7 @@ const Stats: NextPage = () => {
       <SectionHeading title="Some Numbers" />
 
       {/* Stats */}
-      <div className="my-20 flex w-full items-center justify-between">
+      <div className="my-20 flex w-full flex-col items-center justify-center sm:flex-row sm:justify-between">
         {STATS.map((stat, index) => (
           <StatCounter key={index} statsRef={statsRef} stat={stat} />
         ))}
@@ -89,7 +89,7 @@ const StatCounter: NextPage<StatCounterProps> = ({ statsRef, stat }) => {
   }, [value, counting, stat.value, stat.countTimer, statsRef]);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="my-4 flex flex-col items-center sm:my-0">
       <h1 className="font-alatsi mb-2 text-8xl text-white">
         {value.toString() + stat.value.replace(/[0-9]/g, "")}
       </h1>
