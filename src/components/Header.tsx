@@ -48,13 +48,19 @@ const Header: NextPage = () => {
           <Image src="/logo.png" height={100} width={100} alt="" />
         </div>
         {/* Typography */}
-        <div className="mt-[9px]">
-          <h1 className="font-oregon-light text-center text-lg uppercase sm:text-[22px]">
-            Ocean View
-          </h1>
-          <h2 className="font-oregon-light mb-3 text-center text-xs uppercase leading-[2px] tracking-[7px] sm:text-sm">
-            Games
-          </h2>
+        <div className="relative mt-[9px] h-[40px] w-auto sm:h-[40px]">
+          <Image
+            src="/typography.png"
+            height={300}
+            width={300}
+            alt=""
+            style={{
+              objectFit: "contain",
+              height: "100%",
+              width: "100%",
+              // marginTop: "-1px",
+            }}
+          />
         </div>
       </Link>
       {/* Right Side (navigation) */}

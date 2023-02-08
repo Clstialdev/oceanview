@@ -12,16 +12,7 @@ const ProjectCard: NextPage<ProjectCardProps> = ({ project }) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
   return (
-    <motion.div
-      whileTap={{
-        scale: 1.5,
-        zIndex: 20,
-        rotateY: 180,
-        scaleX: -1,
-        cursor: "grab",
-      }}
-      className="select-none hover:cursor-pointer "
-    >
+    <motion.div className="select-none hover:cursor-pointer ">
       <ThreeDeeCardWrapper childRef={cardRef}>
         <div
           className="relative h-[330px] w-[240px] overflow-hidden rounded"

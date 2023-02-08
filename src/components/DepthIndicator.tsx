@@ -50,7 +50,7 @@ const DepthIndicator: NextPage = () => {
           style={{ top: depth }}
         >
           <Image
-            src="/diver3.png"
+            src="/diver.png"
             height={400}
             width={400}
             style={{
