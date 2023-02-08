@@ -10,12 +10,17 @@ import { type RefObject, useEffect } from "react";
 
 interface ThreeDeeCardWrapperProps {
   children: React.ReactNode;
-  childRef: RefObject<HTMLDivElement>;
+  childRef:
+    | RefObject<HTMLDivElement>
+    | RefObject<HTMLTextAreaElement>
+    | RefObject<HTMLInputElement>;
+  widthFull?: boolean;
 }
 
 export const ThreeDeeCardWrapper: NextPage<ThreeDeeCardWrapperProps> = ({
   children,
   childRef,
+  widthFull = false,
 }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -61,7 +66,7 @@ export const ThreeDeeCardWrapper: NextPage<ThreeDeeCardWrapperProps> = ({
 
   return (
     <motion.div
-      style={{ rotateX, rotateY, scale }}
+      style={{ rotateX, rotateY, scale, width: widthFull ? "100%" : "auto" }}
       className="relative h-fit w-fit"
     >
       {children}
@@ -70,7 +75,10 @@ export const ThreeDeeCardWrapper: NextPage<ThreeDeeCardWrapperProps> = ({
 };
 
 interface SheenEffectProps {
-  cardRef: RefObject<HTMLDivElement>;
+  cardRef:
+    | RefObject<HTMLDivElement>
+    | RefObject<HTMLTextAreaElement>
+    | RefObject<HTMLInputElement>;
   strength?: number;
   rgbColor?: string;
 }
@@ -141,7 +149,10 @@ export const SheenEffect: NextPage<SheenEffectProps> = ({
 };
 
 interface GlowEffectProps {
-  cardRef: RefObject<HTMLDivElement>;
+  cardRef:
+    | RefObject<HTMLDivElement>
+    | RefObject<HTMLTextAreaElement>
+    | RefObject<HTMLInputElement>;
   strength?: number;
   rgbaColor?: string;
 }
@@ -185,7 +196,7 @@ export const GlowEffect: NextPage<GlowEffectProps> = ({
 
   return (
     <motion.div
-      className="set absolute h-[300px] w-[300px] rounded-full blur-[100px]"
+      className="absolute h-[300px] w-[300px] rounded-full blur-[100px]"
       style={{
         x,
         y,
