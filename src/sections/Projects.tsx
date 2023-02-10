@@ -3,33 +3,44 @@ import ProjectCard from "../components/ProjectCard";
 import SectionHeading from "../components/SectionHeading";
 
 const FLAGSHIP_PROJECTS = [
-  { link: "", logo: "/projects/domi/logo.png", image: "/projects/domi/bg.png" },
   {
-    link: "",
+    link: "/projects/domi",
+    logo: "/projects/domi/logo.png",
+    image: "/projects/domi/bg.png",
+  },
+  {
+    link: "/projects/runescape",
     logo: "/projects/runescape/logo.png",
     image: "/projects/runescape/bg.png",
   },
 ];
 
 const CONTRACT_AND_EMPLOYMENT = [
-  { link: "", image: "/projects/pocketfactory/bg.webp" },
-  { link: "", image: "/projects/novablast/bg.webp" },
-  { link: "", image: "/projects/nub/bg.webp" },
-  { link: "", image: "/projects/stoneyvocabbuilder/bg.webp" },
-  { link: "", image: "/projects/wordfunworld/bg.webp" },
-  { link: "", image: "/projects/navigo/bg.webp" },
+  { link: "/projects/pocketfactory", image: "/projects/pocketfactory/bg.webp" },
+  { link: "/projects/novablast", image: "/projects/novablast/bg.webp" },
+  { link: "/projects/nub", image: "/projects/nub/bg.webp" },
   {
-    link: "",
+    link: "/projects/stoneyvocabbuilder",
+    image: "/projects/stoneyvocabbuilder/bg.webp",
+  },
+  { link: "/projects/wordfunworld", image: "/projects/wordfunworld/bg.webp" },
+  { link: "/projects/navigo", image: "/projects/navigo/bg.webp" },
+  {
+    link: "/projects/runescape",
     logo: "/projects/runescape/logo.png",
     image: "/projects/runescape/bg.png",
   },
-  { link: "", logo: "/projects/domi/logo.png", image: "/projects/domi/bg.png" },
+  {
+    link: "/projects/domi",
+    logo: "/projects/domi/logo.png",
+    image: "/projects/domi/bg.png",
+  },
 ];
 
 const SELF_PUBLISHED = [
-  { link: "", image: "/projects/timerunner/bg.webp" },
-  { link: "", image: "/projects/empiresrise/bg.webp" },
-  { link: "", image: "/projects/whatsthat/bg.webp" },
+  { link: "/projects/timerunner", image: "/projects/timerunner/bg.webp" },
+  { link: "/projects/empiresrise", image: "/projects/empiresrise/bg.webp" },
+  { link: "/projects/whatsthat", image: "/projects/whatsthat/bg.webp" },
 ];
 
 const Projects: NextPage = () => {

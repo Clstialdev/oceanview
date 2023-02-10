@@ -65,10 +65,10 @@ const Header: NextPage = () => {
       </Link>
       {/* Right Side (navigation) */}
       <nav className="font-oregon hidden gap-12 sm:flex">
-        <Link href="#projects">Projects</Link>
-        <Link href="#services">Services</Link>
-        <Link href="#team">Team</Link>
-        <Link href="#contact">Contact</Link>
+        <Link href="/#projects">Projects</Link>
+        <Link href="/#services">Services</Link>
+        <Link href="/#team">Team</Link>
+        <Link href="/#contact">Contact</Link>
       </nav>
     </motion.header>
   );

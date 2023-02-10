@@ -12,18 +12,19 @@ const ProjectCard: NextPage<ProjectCardProps> = ({ project }) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
   return (
-    <motion.div className="select-none hover:cursor-pointer ">
+    <motion.div className="select-none hover:cursor-pointer">
       <ThreeDeeCardWrapper childRef={cardRef}>
         <div
           className="relative h-[330px] w-[240px] overflow-hidden rounded"
           ref={cardRef}
         >
-          <SheenEffect
-            cardRef={cardRef}
-            strength={0.2}
-            rgbColor={"255,255,255"}
-          />
-
+          <Link href={project.link}>
+            <SheenEffect
+              cardRef={cardRef}
+              strength={0.2}
+              rgbColor={"255,255,255"}
+            />
+          </Link>
           {/* Project Image */}
           <Image
             src={project.image}
