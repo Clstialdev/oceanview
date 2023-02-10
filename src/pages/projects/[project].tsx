@@ -30,7 +30,7 @@ const Project: NextPage = () => {
           {/* Header */}
           <Header />
 
-          <div className="flex h-screen w-full flex-col bg-[#01090B] pt-[100px]">
+          <div className="flex min-h-screen w-full flex-col bg-[#01090B] pt-[100px]">
             {/* Banner */}
             <div className="relative h-[300px] w-full overflow-hidden ">
               <Image
@@ -86,6 +86,30 @@ const Project: NextPage = () => {
               </p>
               {/* Source */}
               <p className="mt-8 text-emerald-500">- {ProjectData.source}</p>
+
+              {/* Images */}
+              <div className="mx-auto mt-12 grid w-full  gap-4  sm:grid-cols-2 xxl:grid-cols-4">
+                {ProjectData.images.map((image, index) => (
+                  <div
+                    key={index}
+                    className="relative h-auto w-full overflow-hidden"
+                  >
+                    <Image
+                      src={ImageFolder + image}
+                      height={660} //this is for nextjs image optimization
+                      width={480} //this is for nextjs image optimization
+                      style={{
+                        objectFit: "contain",
+                        height: "100%",
+                        width: "100%",
+                      }}
+                      alt=""
+                      unselectable="on"
+                      draggable="false"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 

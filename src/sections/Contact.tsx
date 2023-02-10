@@ -3,32 +3,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { type NextPage } from "next";
-import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
 import { type FormEvent, useRef, useState } from "react";
 import Link from "next/link";
 import emailjs from "@emailjs/browser";
 import { ThreeDeeCardWrapper } from "../components/ThreeDeeCardWrapper";
 
 const Contact: NextPage = () => {
-  const [isAnimationPlaying, setIsAnimationPlaying] = useState(false);
-  const underscoreAnimationControl = useAnimation();
-
-  const underscoreAnimationVariant: any = {
-    initial: { width: 0 },
-    animate: {
-      width: "100%",
-      transition: {
-        duration: 0.7,
-      },
-    },
-    end: {
-      width: 0,
-      transition: {
-        duration: 0.7,
-      },
-    },
-  };
-
   const scrollTop = () => {
     window.scroll({
       top: 0,
@@ -36,10 +16,6 @@ const Contact: NextPage = () => {
       behavior: "smooth",
     });
   };
-
-  const contactRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: contactRef });
-  const y = useTransform(scrollYProgress, [0, 1], ["-300vh", "0%"]);
 
   const form = useRef<HTMLFormElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
@@ -77,27 +53,11 @@ const Contact: NextPage = () => {
       className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#01090B] to-[#000000] px-[5%]"
       id="contact"
     >
-      <motion.div
-        style={{ y }}
-        className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden px-[5%]"
-      >
+      <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden px-[5%]">
         <p className=" font-oregon-demibold mb-8 text-[10px] uppercase text-white md:mb-0 md:text-xs">
           Ready for your next project?
         </p>
-        <motion.div
-        // onHoverStart={() => {
-        //   if (!isAnimationPlaying) {
-        //     void underscoreAnimationControl.start(
-        //       underscoreAnimationVariant.animate
-        //     );
-        //   }
-        // }}
-        // onHoverEnd={() => {
-        //   void underscoreAnimationControl.start(
-        //     underscoreAnimationVariant.end
-        //   );
-        // }}
-        >
+        <div>
           <Link href="mailto:contact@oceanviewgames.co.uk">
             <h1 className="font-oregon text-center text-6xl text-white sm:my-4 sm:text-7xl lg:text-[200px]">{`Contact Us`}</h1>
           </Link>
@@ -151,14 +111,8 @@ const Contact: NextPage = () => {
               />
             </form>
           </div>
-          <motion.div
-            animate={underscoreAnimationControl}
-            onAnimationComplete={() => {
-              setIsAnimationPlaying(false);
-            }}
-            className="-mt-12 h-[2px] w-[0] bg-white"
-          ></motion.div>
-        </motion.div>
+          <div className="-mt-12 h-[2px] w-[0] bg-white"></div>
+        </div>
 
         <div className="absolute bottom-0 mb-12 flex h-[100px] w-full flex-col items-center justify-center gap-4 px-[5%] md:mb-0 md:flex-row md:justify-between md:gap-0">
           <p
@@ -186,7 +140,7 @@ const Contact: NextPage = () => {
           </div>
           <p className="w-[100px] text-center text-xs text-white">© 2023</p>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

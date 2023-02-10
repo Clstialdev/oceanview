@@ -97,7 +97,7 @@ const Testimonials: NextPage = () => {
         {/* Arrow Left */}
         {testimonialIndex > 0 && (
           <div
-            className="absolute top-[calc(50%-8px)] left-0 z-30 ml-2 h-[30px] w-[30px] hover:cursor-pointer"
+            className="absolute top-[calc(50%-8px)] left-0 z-30 ml-2 h-[30px] w-[30px] hover:cursor-pointer sm:left-[4%]  md:left-[9%] xxl:left-[13%] xxxl:left-[17%]"
             onClick={() => previousTestimonial()}
           >
             <Image
@@ -117,7 +117,7 @@ const Testimonials: NextPage = () => {
         {/* Arrow Right */}
         {testimonialIndex < TESTIMONIALS.length - 1 && (
           <div
-            className="absolute top-[calc(50%-8px)] right-0 z-30 mr-2 h-[30px] w-[30px] hover:cursor-pointer"
+            className="absolute top-[calc(50%-8px)] right-0 z-30 mr-2 h-[30px] w-[30px] hover:cursor-pointer sm:right-[4%]  md:right-[9%] xxl:right-[13%] xxxl:right-[17%]"
             onClick={() => nextTestimonial()}
           >
             <Image
