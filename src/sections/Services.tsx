@@ -12,14 +12,14 @@ const Services: NextPage = () => {
       {/* Transition 'rocks' Image */}
       <div className="absolute top-0 left-0 right-0 w-full">
         <Image
-          src="/Transition2.png"
+          src="/Transition2-1.png"
           height={3000} //this is for nextjs image optimization
           width={3000} //this is for nextjs image optimization
           style={{
             objectFit: "contain",
             height: "100%",
             width: "100%",
-            scale: "-1",
+            // scale: "-1",
           }}
           alt="Transition Image"
           unoptimized //this is to keep the image clarity

@@ -64,7 +64,7 @@ const Hero: NextPage = () => {
       {/* Transition 'paper cut' Image */}
       <div className="absolute -bottom-[4vw] left-0 right-0 w-full">
         <Image
-          src="/Transition1Fixed.png"
+          src="/Transition1Fixed2.png"
           height={3000} //this is for nextjs image optimization
           width={3000} //this is for nextjs image optimization
           style={{ objectFit: "contain", height: "100%", width: "100%" }}
