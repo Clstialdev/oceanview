@@ -12,7 +12,7 @@ const Services: NextPage = () => {
       {/* Transition 'rocks' Image */}
       <div className="absolute top-0 left-0 right-0 w-full">
         <Image
-          src="/Transition2-1.png"
+          src="/Transition2-1.webp"
           height={3000} //this is for nextjs image optimization
           width={3000} //this is for nextjs image optimization
           style={{
@@ -35,28 +35,28 @@ const Services: NextPage = () => {
           <div className="flex w-full items-center justify-center">
             <ServiceCard
               key={1}
-              image="/services/gamedes.png"
+              image="/services/gamedes.webp"
               title="Game Design"
             />
           </div>
           <div className="flex w-full items-center justify-center">
             <ServiceCard
               key={2}
-              image="/services/mobile.png"
+              image="/services/mobile.webp"
               title="Mobile Development"
             />
           </div>
           <div className="flex w-full items-center justify-center">
             <ServiceCard
               key={3}
-              image="/services/monetization.png"
+              image="/services/monetization.webp"
               title="Monetization"
             />
           </div>
           <div className="flex w-full items-center justify-center">
             <ServiceCard
               key={4}
-              image="/services/octopus.png"
+              image="/services/octopus.webp"
               title="Game Design, Advice & Guidance"
             />
           </div>

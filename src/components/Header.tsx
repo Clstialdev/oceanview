@@ -45,12 +45,12 @@ const Header: NextPage = () => {
       >
         {/* Logo */}
         <div className="relative h-[40px] w-[40px] sm:h-[60px] sm:w-[60px]">
-          <Image src="/logo.png" height={100} width={100} alt="" />
+          <Image src="/logo.webp" height={100} width={100} alt="" />
         </div>
         {/* Typography */}
         <div className="relative mt-[9px] h-[40px] w-auto sm:h-[40px]">
           <Image
-            src="/typography.png"
+            src="/typography.webp"
             height={300}
             width={300}
             alt=""

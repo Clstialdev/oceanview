@@ -4,22 +4,22 @@
 
 @font-face {
   font-family: Oregon;
-  src: url(../../public/fonts/Oregon.ttf);
+  src: url(../../public/fonts/Oregon.woff2);
   font-weight: normal;
 }
 @font-face {
   font-family: Oregon;
-  src: url(../../public/fonts/OregonLight.ttf);
+  src: url(../../public/fonts/OregonLight.woff2);
   font-weight: lighter;
 }
 @font-face {
   font-family: Oregon;
-  src: url(../../public/fonts/OregonDemiBold.ttf);
+  src: url(../../public/fonts/OregonDemiBold.woff2);
   font-weight: bold;
 }
 @font-face {
   font-family: Alatsi;
-  src: url(../../public/fonts/Alatsi.ttf);
+  src: url(../../public/fonts/Alatsi.woff2);
   font-weight: normal;
 }
 
