@@ -80,7 +80,7 @@ const Testimonials: NextPage = () => {
 
   return (
     <div
-      className="relative w-full bg-gradient-to-b from-[#07041A] to-[#01090B] pb-64"
+      className="relative w-full bg-gradient-to-b from-[#07041A] to-[#01090B] pb-20 pt-12"
       id="testimonials"
     >
       {/* Section Heading */}
@@ -93,7 +93,7 @@ const Testimonials: NextPage = () => {
       </div>
 
       {/* Container */}
-      <div className="relative mt-8 flex min-h-[200px] w-full justify-center overflow-hidden px-[10%]">
+      <div className="relative mt-8 mt-28 flex min-h-[200px] w-full justify-center overflow-hidden px-[10%]">
         {/* Arrow Left */}
         {testimonialIndex > 0 && (
           <div
