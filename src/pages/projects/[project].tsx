@@ -35,7 +35,7 @@ const Project: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Ocean View Games - </title>
+        <title>Ocean View Games - {projectId}</title>
         <meta name="description" content="Ocean View Games is a ..." />
         <link rel="icon" href="/favicon.ico" />
       </Head>

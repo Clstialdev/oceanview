@@ -99,10 +99,10 @@ const Team: NextPage = () => {
               variants={itemVariant}
               className="hidden w-full lg:mt-20 lg:block lg:w-1/2 "
             >
-              <h1 className="font-oregon-light uppercase text-beige sm:text-[82px] xxl:text-8xl xxxl:text-9xl">
-                Meet the <br></br> Development <br></br> Team
+              <h1 className="font-oregon-light uppercase text-beige sm:text-[72px] xxl:text-7xl xxxl:text-8xl">
+                Meet the Team
               </h1>
-              <p className="font-oregon my-12 text-lg text-beige text-opacity-80 lg:text-2xl">
+              <p className="font-oregon my-12 pr-6 text-lg text-beige text-opacity-80 lg:text-2xl">
                 We are a game development company based in the UK, specializing
                 in X,Y,Z development across all platforms.
               </p>
@@ -123,7 +123,7 @@ const Team: NextPage = () => {
                     className="relative h-full w-1/2 duration-300 last:py-4 hover:cursor-pointer hover:opacity-90 last:sm:py-0"
                     onClick={() => setSelectedMember(index)}
                   >
-                    <div className="relative h-[80%] w-full overflow-hidden rounded bg-red-200">
+                    <div className="relative h-[80%] max-h-[600px] w-full max-w-[400px] overflow-hidden rounded ">
                       <Image
                         src={"/team/" + member.image}
                         height={1000}
