@@ -75,7 +75,7 @@ const Team: NextPage = () => {
       {/* Section Heading */}
       <div className="px-[10%]">
         <SectionHeading
-          title="Meat The Team"
+          title="Meet The Team"
           uppercased
           secondaryColor="#7B5182"
         />
