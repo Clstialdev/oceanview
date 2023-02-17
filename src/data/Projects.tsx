@@ -111,7 +111,7 @@ This project was completed during Adam's previous employment.`,
     playstoreLink:
       "https://play.google.com/store/apps/details?id=com.fishinabottle.navigo", //URL was not found
     description: `Working in collaboration with a more than a dozen educational and technical institutions across Europe, Navigo is an ambitious game for android tablets which aims to assist children learning English, German, Spanish or Greek as a first language. The game was designed to be used alongside traditional learning to help reinforce the teaching while encouraging children to go above and beyond with a compelling storyline and engaging game mechanics.`,
-    banner: "banner.jpg",
+    banner: "2.webp",
     images: ["0.webp", "1.webp", "2.webp", "3.webp", "4.webp"],
     thingsDone: [
       "Collaborating with Universities across Europe to ensure the designed games were meeting the appropriate learning criteria",

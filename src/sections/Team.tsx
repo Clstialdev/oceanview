@@ -69,7 +69,7 @@ const Team: NextPage = () => {
 
   return (
     <div
-      className="relative h-fit  w-full bg-[#07041A] pb-12 xl:pb-20"
+      className="relative h-fit w-full bg-[#07041A] pb-12 xl:pb-20"
       id="team"
     >
       {/* Section Heading */}
@@ -98,15 +98,19 @@ const Team: NextPage = () => {
               variants={itemVariant}
               className="hidden w-full lg:mt-20 lg:block lg:w-1/2 "
             >
-
               {/*}  
               <h1 className="font-oregon-light uppercase text-beige sm:text-[50px] xxl:text-7xl xxxl:text-8xl">
                 About us
               </h1> {*/}
-              
+
               <p className="font-oregon my-12 pr-6 text-lg text-beige text-opacity-80 lg:text-2xl">
-                With David having over 10 years experience working at major gaming studios such as Jagex on the legendary MMO RuneScape. Adam with also over 10 years of experience building games for major clients such as Disney, Cambridge University and the BBC. Your project will be in safe hands.              </p>
-              
+                With David having over 10 years experience working at major
+                gaming studios such as Jagex on the legendary MMO RuneScape.
+                Adam with also over 10 years of experience building games for
+                major clients such as Disney, Cambridge University and the BBC.
+                Your project will be in safe hands.{" "}
+              </p>
+
               <p className="font-oregon text-lg text-white lg:text-2xl">
                 Click our profile images for more information
               </p>

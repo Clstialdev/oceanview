@@ -16,10 +16,10 @@ const SectionHeading: NextPage<SectionHeadingProps> = ({
   secondaryColor = "#518276",
 }) => {
   return (
-    <div className="mb-4">
+    <div className="pb-4">
       {/* Ornament */}
       <h2
-        className="font-oregon-demibold mb-2 uppercase sm:text-xl"
+        className="font-oregon-demibold pb-2 uppercase sm:text-xl"
         style={{ color: secondaryColor }}
       >
         {ornament}
