@@ -46,26 +46,26 @@ const Project: NextPage = () => {
   const y2 = useTransform(scrollYProgress, [0, 1], ["-100%", "300px"]);
   const scale = useTransform(scrollYProgress, [0, 1], ["1", "3"]);
   const letterSpacing = useTransform(scrollYProgress, [0, 1], ["2px", "90px"]);
-  const opacity = useTransform(scrollYProgress, [0, 1], ["0.4", "0"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2], ["1", "0"]);
   const blurValue = useTransform(scrollYProgress, [0.2, 1], ["0", "7px"]);
-  const darknessValue = useTransform(scrollYProgress, [0, 1], ["1", "0.6"]);
+  const darknessValue = useTransform(scrollYProgress, [0, 0.5], ["1", "0.6"]);
   const logoFilter = useMotionTemplate`blur(${blurValue}) brightness(${darknessValue})`;
   const bgFilter = useMotionTemplate`brightness(${darknessValue})`;
 
   return (
     <>
       <Head>
-        <title>Ocean View Games - {projectId}</title>
+        <title>Ocean View Games </title>
         <meta name="description" content="Ocean View Games is a ..." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {projectId && ProjectData && (
-        <main id="main">
+        <main id="main" className="relative h-fit min-h-screen w-full">
           {/* Header */}
           <Header />
 
           {/* Hero */}
-          <div className="relative h-screen w-full overflow-hidden" id="hero">
+          <div className="relative max-h-[55vh] min-h-[500px] w-full overflow-hidden">
             <motion.div
               style={{ y, filter: bgFilter }}
               className="relative h-full w-full"
@@ -105,7 +105,7 @@ const Project: NextPage = () => {
                 unoptimized //this is to keep the image clarity
               /> */}
               <motion.h1
-                className="font-alatsi mt-24 text-center text-6xl uppercase  text-white"
+                className="font-alatsi mt-24 text-center text-6xl uppercase text-white drop-shadow-lg"
                 style={{ letterSpacing }}
               >
                 {ProjectData.name}
