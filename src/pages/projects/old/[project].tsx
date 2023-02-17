@@ -3,12 +3,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { type NextPage } from "next";
 import Head from "next/head";
-import Header from "../../components/Header";
-import Contact from "../../sections/Contact";
+import Header from "../../../components/Header";
+import Contact from "../../../sections/Contact";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-import PROJECTS, { type ProjectData } from "../../data/Projects";
+import PROJECTS, { type ProjectData } from "../../../data/Projects";
 import Link from "next/link";
 import { useEffect } from "react";
 

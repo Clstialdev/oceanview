@@ -12,12 +12,6 @@ import PROJECTS, { type ProjectData } from "../../data/Projects";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
-import About from "../../sections/About";
-import Hero from "../../sections/Hero";
-import Projects from "../../sections/Projects";
-import Services from "../../sections/Services";
-import Stats from "../../sections/Stats";
-import Testimonials from "../../sections/Testimonials";
 import {
   motion,
   useMotionTemplate,
