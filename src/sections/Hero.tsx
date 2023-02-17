@@ -61,6 +61,8 @@ const Hero: NextPage = () => {
           style={{ objectFit: "contain", height: "100%", width: "100%" }}
           alt="Logo"
           unoptimized //this is to keep the image clarity
+          placeholder="blur"
+          blurDataURL="/logo Blur.webp"
         />
       </motion.div>
 
@@ -73,6 +75,8 @@ const Hero: NextPage = () => {
           style={{ objectFit: "contain", height: "100%", width: "100%" }}
           alt="Transition Image"
           unoptimized //this is to keep the image clarity
+          placeholder="blur"
+          blurDataURL="/Transition1Fixed2 Blur.webp"
         />
       </div>
     </div>
