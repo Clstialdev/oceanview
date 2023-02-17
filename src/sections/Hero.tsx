@@ -30,13 +30,14 @@ const Hero: NextPage = () => {
           src="/HeroBG 70.webp"
           height={3000} //this is for nextjs image optimization
           width={3000} //this is for nextjs image optimization
+          priority={true}
           style={{
             objectFit: "cover",
             height: "100%",
             width: "100%",
             marginTop: "-1px",
           }}
-          alt="Beautiful Scenery of a vintage room looking out into the ocean through open double doors"
+          alt="Ocean View Games"
           unoptimized //this is to keep the image clarity
         />
       </motion.div>
