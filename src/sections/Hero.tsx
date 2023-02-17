@@ -56,7 +56,7 @@ const Hero: NextPage = () => {
           height={3000} //this is for nextjs image optimization
           width={3000} //this is for nextjs image optimization
           style={{ objectFit: "contain", height: "100%", width: "100%" }}
-          alt="Beautiful Scenery of a vintage room looking out into the ocean through open double doors"
+          alt="Logo"
           unoptimized //this is to keep the image clarity
         />
       </motion.div>

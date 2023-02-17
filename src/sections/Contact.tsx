@@ -8,7 +8,11 @@ import Link from "next/link";
 import emailjs from "@emailjs/browser";
 import { ThreeDeeCardWrapper } from "../components/ThreeDeeCardWrapper";
 
-const Contact: NextPage = () => {
+interface ContactProps {
+  bgcolor?: string | undefined;
+}
+
+const Contact: NextPage<ContactProps> = ({ bgcolor }) => {
   const scrollTop = () => {
     window.scroll({
       top: 0,
@@ -51,6 +55,7 @@ const Contact: NextPage = () => {
   return (
     <div
       className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#01090B] to-[#000000] px-[5%]"
+      style={{ background: bgcolor }}
       id="contact"
     >
       <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden px-[5%]">

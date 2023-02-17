@@ -10,7 +10,21 @@ import { useRouter } from "next/router";
 
 import PROJECTS, { type ProjectData } from "../../data/Projects";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+
+import About from "../../sections/About";
+import Hero from "../../sections/Hero";
+import Projects from "../../sections/Projects";
+import Services from "../../sections/Services";
+import Stats from "../../sections/Stats";
+import Testimonials from "../../sections/Testimonials";
+import {
+  motion,
+  useMotionTemplate,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import SectionHeading from "../../components/SectionHeading";
 
 const Project: NextPage = () => {
   const router = useRouter();
@@ -32,6 +46,18 @@ const Project: NextPage = () => {
     }
   }, [projectId]);
 
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: heroRef });
+  const y = useTransform(scrollYProgress, [0, 1], ["0", "500px"]);
+  const y2 = useTransform(scrollYProgress, [0, 1], ["-100%", "300px"]);
+  const scale = useTransform(scrollYProgress, [0, 1], ["1", "3"]);
+  const letterSpacing = useTransform(scrollYProgress, [0, 1], ["2px", "90px"]);
+  const opacity = useTransform(scrollYProgress, [0, 1], ["0.4", "0"]);
+  const blurValue = useTransform(scrollYProgress, [0.2, 1], ["0", "7px"]);
+  const darknessValue = useTransform(scrollYProgress, [0, 1], ["1", "0.6"]);
+  const logoFilter = useMotionTemplate`blur(${blurValue}) brightness(${darknessValue})`;
+  const bgFilter = useMotionTemplate`brightness(${darknessValue})`;
+
   return (
     <>
       <Head>
@@ -44,32 +70,158 @@ const Project: NextPage = () => {
           {/* Header */}
           <Header />
 
-          <div className="flex min-h-screen w-full flex-col bg-[#01090B] ">
-            {/* Banner */}
-            <div className="relative h-[400px] w-full overflow-hidden ">
+          {/* Hero */}
+          <div className="relative h-screen w-full overflow-hidden" id="hero">
+            <motion.div
+              style={{ y, filter: bgFilter }}
+              className="relative h-full w-full"
+            >
+              {/* BG IMG */}
               <Image
                 src={ImageFolder + ProjectData.banner}
-                height={660} //this is for nextjs image optimization
-                width={480} //this is for nextjs image optimization
+                height={3000} //this is for nextjs image optimization
+                width={3000} //this is for nextjs image optimization
                 style={{
                   objectFit: "cover",
                   height: "100%",
                   width: "100%",
-                  filter: "blur(10px)",
+                  marginTop: "-1px",
                 }}
-                alt=""
-                unselectable="on"
-                draggable="false"
+                alt="Beautiful Scenery of a vintage room looking out into the ocean through open double doors"
+                unoptimized //this is to keep the image clarity
               />
-              <div className="font-alatsi absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center pt-[100px] text-4xl tracking-wider text-white">
-                <h1 className="text-6xl ">{ProjectData.name}</h1>
-                {/* Download from Appstore */}
+            </motion.div>
+
+            <motion.div
+              style={{
+                translateY: y2,
+                translateX: "-50%",
+                scale,
+                opacity,
+                filter: logoFilter,
+              }}
+              className="absolute top-[45%] left-[50%] h-[20vh] w-full -translate-x-[50%] -translate-y-[50%] opacity-40"
+            >
+              {/* <Image
+                src="/logo.png"
+                height={3000} //this is for nextjs image optimization
+                width={3000} //this is for nextjs image optimization
+                style={{ objectFit: "contain", height: "100%", width: "100%" }}
+                alt=""
+                unoptimized //this is to keep the image clarity
+              /> */}
+              <motion.h1
+                className="font-alatsi mt-24 text-center text-6xl uppercase  text-white"
+                style={{ letterSpacing }}
+              >
+                {ProjectData.name}
+              </motion.h1>
+            </motion.div>
+
+            {/* Transition 'paper cut' Image */}
+            {/* <div className="absolute -bottom-[4vw] left-0 right-0 w-full">
+              <Image
+                src="/Transition1Fixed2.png"
+                height={3000} //this is for nextjs image optimization
+                width={3000} //this is for nextjs image optimization
+                style={{ objectFit: "contain", height: "100%", width: "100%" }}
+                alt="Transition Image"
+                unoptimized //this is to keep the image clarity
+              />
+            </div> */}
+          </div>
+
+          {/* Description Section */}
+          <div
+            className="relative flex min-h-[580px] w-full px-[10%] pt-20"
+            style={{
+              background: `linear-gradient(180deg, ${
+                ProjectData.bgFrom ?? "#271120"
+              } 0%, ${ProjectData.bgTo ?? "#10040E"} 100%`,
+              paddingBottom: ProjectData.thingsDone ? "96px" : "48px",
+            }}
+            id="about"
+          >
+            {/* Left */}
+            <div className="relative h-full w-[60%]">
+              {/* Section Heading */}
+              <SectionHeading
+                title={ProjectData.name}
+                uppercased
+                ornament=""
+                description=""
+              />
+
+              {/* Description */}
+              <p className="font-oregon-demibold max-w-[1200px] whitespace-pre-wrap text-xl text-beige">
+                {ProjectData.description}
+              </p>
+
+              {ProjectData.thingsDone && (
+                <div
+                  className="mt-12 rounded border-r-[1px] border-t-[1px] border-l-[1px] border-white border-opacity-5 py-2 px-4 text-white"
+                  style={{
+                    backgroundColor:
+                      (ProjectData.bgTo as string) + "26" ?? "#10040E26",
+                  }}
+                >
+                  <h2 className="text-xl font-bold text-beige">
+                    Here is a list of some of the work we have done:
+                  </h2>
+                  <ul className="mt-2 list-disc pl-4 text-beige">
+                    {ProjectData.thingsDone.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Section Divider */}
+              <div className="mt-12 mb-6 h-[2px] w-1/2 bg-white bg-opacity-20"></div>
+
+              {/* Branding */}
+              <div className="flex items-center gap-4">
+                <div className="relative h-[50px] w-[50px]">
+                  <Image
+                    src="/logobeige.png"
+                    height={40} //this is for nextjs image optimization
+                    width={40} //this is for nextjs image optimization
+                    style={{
+                      objectFit: "contain",
+                      height: "100%",
+                      width: "100%",
+                    }}
+                    alt="Logo"
+                    unoptimized //this is to keep the image clarity
+                  />
+                </div>
+                <h1 className="font-lg font-oregon-light mt-1 uppercase text-beige">
+                  {ProjectData.source ?? "Ocean View Games"}
+                </h1>
+              </div>
+            </div>
+
+            {/* Right */}
+
+            <div className="mt-[84px] flex w-[40%] flex-col items-center pl-[5%]">
+              <p className="text-right text-beige text-opacity-60">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+
+              <div className="flex space-x-4">
+                {/* Apple store */}
                 {ProjectData.appstoreLink !== undefined && (
                   <Link
                     href={ProjectData.appstoreLink}
                     className="relative mt-4 flex scale-[0.8] items-center gap-4 rounded border-[1px] border-white border-opacity-20 bg-black bg-opacity-25 p-2  text-2xl text-white backdrop-blur-xl"
                   >
-                    <div className="relative h-[60px] w-[60px] overflow-hidden">
+                    <div className="relative h-[60px] w-[60px] overflow-hidden p-2">
                       <Image
                         src={"/projects/applelogo.png"}
                         height={660} //this is for nextjs image optimization
@@ -90,60 +242,111 @@ const Project: NextPage = () => {
                     </div>
                   </Link>
                 )}
+
+                {/* Android */}
+                {ProjectData.playstoreLink !== undefined && (
+                  <Link
+                    href={ProjectData.playstoreLink}
+                    className="relative mt-4 flex scale-[0.8] items-center gap-4 rounded border-[1px] border-white border-opacity-20 bg-black bg-opacity-25 p-2  text-2xl text-white backdrop-blur-xl"
+                  >
+                    <div className="relative h-[60px] w-[60px] overflow-hidden p-2">
+                      <Image
+                        src={"/projects/playstorelogo.png"}
+                        height={660} //this is for nextjs image optimization
+                        width={480} //this is for nextjs image optimization
+                        style={{
+                          objectFit: "contain",
+                          height: "100%",
+                          width: "100%",
+                        }}
+                        alt="download from appstore"
+                        unselectable="on"
+                        draggable="false"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-xl">Download on the</p>
+                      <p>Play Store</p>
+                    </div>
+                  </Link>
+                )}
               </div>
             </div>
 
-            <div className="my-12 px-[10%]">
-              {/* Description */}
-              <p className="whitespace-pre-wrap text-white">
-                {ProjectData.description}
-              </p>
-              {/* Source */}
-              {ProjectData.source && (
-                <p className="mt-8 text-emerald-500">- {ProjectData.source}</p>
-              )}
+            {/* Transition 'rocks' Image */}
+            <div className="absolute bottom-0 left-0 right-0 w-full">
+              <Image
+                src="/Transition2.png"
+                height={3000} //this is for nextjs image optimization
+                width={3000} //this is for nextjs image optimization
+                style={{
+                  objectFit: "contain",
+                  height: "100%",
+                  width: "100%",
+                }}
+                alt="Transition Image"
+                unoptimized //this is to keep the image clarity
+              />
+            </div>
+          </div>
 
-              {ProjectData.thingsDone && (
-                <div className="mt-12 rounded border-r-[1px] border-t-[1px] border-l-[1px] border-white border-opacity-5 bg-[#385140] bg-opacity-[15%] py-2 px-4 text-white">
-                  <h2 className="text-xl font-bold">
-                    Here is a list of some of the work we have done:
-                  </h2>
-                  <ul className="mt-2 list-disc pl-4">
-                    {ProjectData.thingsDone.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
+          {/* Images Section */}
+          <div
+            className="relative w-full px-[10%] py-48"
+            style={{ backgroundColor: ProjectData.bgTo ?? "#10040E" }}
+            id="services"
+          >
+            {/* Transition 'rocks' Image */}
+            <div className="absolute top-0 left-0 right-0 w-full">
+              <Image
+                src="/Transition2-1.png"
+                height={3000} //this is for nextjs image optimization
+                width={3000} //this is for nextjs image optimization
+                style={{
+                  objectFit: "contain",
+                  height: "100%",
+                  width: "100%",
+                  // scale: "-1",
+                }}
+                alt="Transition Image"
+                unoptimized //this is to keep the image clarity
+              />
+            </div>
+
+            {/* Section Heading */}
+            <SectionHeading
+              title="Images"
+              ornament={ProjectData.name}
+              description="Here is a set of images from this project"
+            />
+
+            {/* Images */}
+            <div className="mx-auto mt-12 grid w-full  gap-4  sm:grid-cols-2 xxl:grid-cols-4">
+              {ProjectData.images.map((image, index) => (
+                <div
+                  key={index}
+                  className="relative h-auto w-full overflow-hidden"
+                >
+                  <Image
+                    src={ImageFolder + image}
+                    height={660} //this is for nextjs image optimization
+                    width={480} //this is for nextjs image optimization
+                    style={{
+                      objectFit: "contain",
+                      height: "100%",
+                      width: "100%",
+                    }}
+                    alt=""
+                    unselectable="on"
+                    draggable="false"
+                  />
                 </div>
-              )}
-
-              {/* Images */}
-              <div className="mx-auto mt-12 grid w-full  gap-4  sm:grid-cols-2 xxl:grid-cols-4">
-                {ProjectData.images.map((image, index) => (
-                  <div
-                    key={index}
-                    className="relative h-auto w-full overflow-hidden"
-                  >
-                    <Image
-                      src={ImageFolder + image}
-                      height={660} //this is for nextjs image optimization
-                      width={480} //this is for nextjs image optimization
-                      style={{
-                        objectFit: "contain",
-                        height: "100%",
-                        width: "100%",
-                      }}
-                      alt=""
-                      unselectable="on"
-                      draggable="false"
-                    />
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
 
           {/* Contact Us */}
-          <Contact />
+          <Contact bgcolor={ProjectData.bgTo ?? "#10040E"} />
         </main>
       )}
     </>
