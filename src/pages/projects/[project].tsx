@@ -177,7 +177,7 @@ const Project: NextPage = () => {
               <div className="flex items-center gap-4">
                 <div className="relative h-[50px] w-[50px]">
                   <Image
-                    src="/logobeige.png"
+                    src="/logobeige.webp"
                     height={40} //this is for nextjs image optimization
                     width={40} //this is for nextjs image optimization
                     style={{
@@ -268,9 +268,9 @@ const Project: NextPage = () => {
             </div>
 
             {/* Transition 'rocks' Image */}
-            <div className="absolute bottom-0 left-0 right-0 w-full">
+            {/* <div className="absolute bottom-0 left-0 right-0 w-full">
               <Image
-                src="/Transition2.png"
+                src="/Transition2.webp"
                 height={3000} //this is for nextjs image optimization
                 width={3000} //this is for nextjs image optimization
                 style={{
@@ -281,19 +281,19 @@ const Project: NextPage = () => {
                 alt="Transition Image"
                 unoptimized //this is to keep the image clarity
               />
-            </div>
+            </div> */}
           </div>
 
           {/* Images Section */}
           <div
-            className="relative w-full px-[10%] py-48"
+            className="relative w-full px-[10%] pb-48 pt-12"
             style={{ backgroundColor: ProjectData.bgTo ?? "#10040E" }}
             id="services"
           >
             {/* Transition 'rocks' Image */}
-            <div className="absolute top-0 left-0 right-0 w-full">
+            {/* <div className="absolute top-0 left-0 right-0 w-full">
               <Image
-                src="/Transition2-1.png"
+                src="/Transition2-1.webp"
                 height={3000} //this is for nextjs image optimization
                 width={3000} //this is for nextjs image optimization
                 style={{
@@ -305,7 +305,7 @@ const Project: NextPage = () => {
                 alt="Transition Image"
                 unoptimized //this is to keep the image clarity
               />
-            </div>
+            </div> */}
 
             {/* Section Heading */}
             <SectionHeading
