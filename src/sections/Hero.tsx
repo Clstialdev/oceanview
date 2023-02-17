@@ -39,7 +39,9 @@ const Hero: NextPage = () => {
           }}
           alt="Ocean View Games"
           unoptimized //this is to keep the image clarity
-        />
+          placeholder="blur"
+          blurDataURL="/HeroBG 70 Blur.webp"
+/>
       </motion.div>
 
       <motion.div
