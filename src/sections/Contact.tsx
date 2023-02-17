@@ -128,17 +128,17 @@ const Contact: NextPage<ContactProps> = ({ bgcolor }) => {
           </p>
           <div className="flex w-full justify-center gap-4">
             <Link href="#">
-              <div className="h-fit w-fit rounded border-[1px] border-white bg-black py-2 px-4 text-white duration-150 hover:cursor-pointer hover:bg-white hover:text-black">
+              <div className="h-fit w-fit rounded border-[1px] border-white bg-black bg-opacity-20 py-2 px-4 text-white duration-150 hover:cursor-pointer hover:bg-white hover:text-black">
                 LinkedIn
               </div>
             </Link>
             <Link href="#">
-              <div className="h-fit w-fit rounded border-[1px] border-white bg-black py-2 px-4 text-white duration-150 hover:cursor-pointer hover:bg-white hover:text-black">
+              <div className="h-fit w-fit rounded border-[1px] border-white bg-black bg-opacity-20 py-2 px-4 text-white duration-150 hover:cursor-pointer hover:bg-white hover:text-black">
                 Upwork
               </div>
             </Link>
             <Link href="#">
-              <div className="h-fit w-fit rounded border-[1px] border-white bg-black py-2 px-4 text-white duration-150 hover:cursor-pointer hover:bg-white hover:text-black">
+              <div className="h-fit w-fit rounded border-[1px] border-white bg-black bg-opacity-20 py-2 px-4 text-white duration-150 hover:cursor-pointer hover:bg-white hover:text-black">
                 Twitter
               </div>
             </Link>
