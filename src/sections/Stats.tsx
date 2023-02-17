@@ -19,7 +19,10 @@ const Stats: NextPage = () => {
       id="stats"
     >
       {/* Section Heading */}
-      <SectionHeading title="Some Numbers" />
+      <SectionHeading
+        title="Some Numbers"
+        description="We like numbers, here are some of our favorite numbers."
+      />
 
       {/* Stats */}
       <div className="my-20 flex w-full flex-col items-center justify-center sm:flex-row sm:justify-between">

@@ -24,7 +24,7 @@ Alongside developing our own IP and passion projects we also work with many clie
       <div className="flex items-center gap-4">
         <div className="relative h-[50px] w-[50px]">
           <Image
-            src="/logobeige.png"
+            src="/logobeige.webp"
             height={40} //this is for nextjs image optimization
             width={40} //this is for nextjs image optimization
             style={{ objectFit: "contain", height: "100%", width: "100%" }}
@@ -40,7 +40,7 @@ Alongside developing our own IP and passion projects we also work with many clie
       {/* Transition 'rocks' Image */}
       <div className="absolute bottom-0 left-0 right-0 w-full">
         <Image
-          src="/Transition2.png"
+          src="/Transition2.webp"
           height={3000} //this is for nextjs image optimization
           width={3000} //this is for nextjs image optimization
           style={{ objectFit: "contain", height: "100%", width: "100%" }}

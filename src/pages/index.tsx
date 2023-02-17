@@ -10,6 +10,7 @@ import Hero from "../sections/Hero";
 import Projects from "../sections/Projects";
 import Services from "../sections/Services";
 import Stats from "../sections/Stats";
+import Team from "../sections/Team";
 import Testimonials from "../sections/Testimonials";
 
 const Home: NextPage = () => {
@@ -43,6 +44,9 @@ const Home: NextPage = () => {
         <Projects />
 
         {/* Section 6 */}
+        <Team />
+
+        {/* Section 7 */}
         <Testimonials />
 
         {/* Section 7 */}

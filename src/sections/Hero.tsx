@@ -27,7 +27,7 @@ const Hero: NextPage = () => {
       >
         {/* BG IMG */}
         <Image
-          src="/HeroBG.png"
+          src="/HeroBG 70.webp"
           height={3000} //this is for nextjs image optimization
           width={3000} //this is for nextjs image optimization
           style={{
@@ -52,7 +52,7 @@ const Hero: NextPage = () => {
         className="absolute top-[45%] left-[50%] h-[20vh] w-full -translate-x-[50%] -translate-y-[50%] opacity-40"
       >
         <Image
-          src="/logo.png"
+          src="/logo.webp"
           height={3000} //this is for nextjs image optimization
           width={3000} //this is for nextjs image optimization
           style={{ objectFit: "contain", height: "100%", width: "100%" }}
@@ -64,7 +64,7 @@ const Hero: NextPage = () => {
       {/* Transition 'paper cut' Image */}
       <div className="absolute -bottom-[4vw] left-0 right-0 w-full">
         <Image
-          src="/Transition1Fixed2.png"
+          src="/Transition1Fixed2.webp"
           height={3000} //this is for nextjs image optimization
           width={3000} //this is for nextjs image optimization
           style={{ objectFit: "contain", height: "100%", width: "100%" }}
