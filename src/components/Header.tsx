@@ -64,7 +64,7 @@ const Header: NextPage = () => {
         </div>
       </Link>
       {/* Right Side (navigation) */}
-      <nav className="font-oregon hidden gap-12 sm:flex">
+      <nav className="font-oregon hidden gap-12 sm:flex sm:text-[20px]">
         <Link href="/#projects">Projects</Link>
         <Link href="/#services">Services</Link>
         <Link href="/#team">Team</Link>

@@ -63,9 +63,9 @@ const Contact: NextPage<ContactProps> = ({ bgcolor }) => {
           Ready for your next project?
         </p>
         <div>
-          <Link href="mailto:contact@oceanviewgames.co.uk">
-            <h1 className="font-oregon text-center text-6xl text-white sm:my-4 sm:text-7xl lg:text-[200px]">{`Contact Us`}</h1>
-          </Link>
+        
+          <h1 className="font-oregon text-center text-6xl text-white sm:my-4 sm:text-7xl lg:text-[100px]">{`Contact Us`}</h1>
+
           <div className="mb-12 flex w-full justify-center sm:mb-0">
             <form
               ref={form}

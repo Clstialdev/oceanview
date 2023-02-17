@@ -24,17 +24,7 @@ const CONTRACT_AND_EMPLOYMENT = [
     image: "/projects/stoneyvocabbuilder/bg.webp",
   },
   { link: "/projects/wordfunworld", image: "/projects/wordfunworld/bg.webp" },
-  { link: "/projects/navigo", image: "/projects/navigo/bg.webp" },
-  {
-    link: "/projects/runescape",
-    logo: "/projects/runescape/logo.png",
-    image: "/projects/runescape/bg.png",
-  },
-  {
-    link: "/projects/domi",
-    logo: "/projects/domi/logo.png",
-    image: "/projects/domi/bg.png",
-  },
+  { link: "/projects/navigo", image: "/projects/navigo/bg.webp" }
 ];
 
 const SELF_PUBLISHED = [

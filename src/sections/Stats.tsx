@@ -21,7 +21,8 @@ const Stats: NextPage = () => {
       {/* Section Heading */}
       <SectionHeading
         title="Some Numbers"
-        description="We like numbers, here are some of our favorite numbers."
+        description="Here are some numbers of our accomplishments"
+        uppercased
       />
 
       {/* Stats */}

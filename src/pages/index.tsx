@@ -18,7 +18,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Ocean View Games</title>
-        <meta name="description" content="Ocean View Games is a ..." />
+        <meta name="description" content="Ocean View Games is a games studio which undertakes contract work alongside developing their own IP." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* Body Code Starts Here */}

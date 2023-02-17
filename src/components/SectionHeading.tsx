@@ -9,9 +9,9 @@ interface SectionHeadingProps {
 }
 
 const SectionHeading: NextPage<SectionHeadingProps> = ({
-  ornament = "Lorem Ipsum",
+  ornament = "",
   title = "Title Here",
-  description = "Lorem Ipsum Lorem Ipsum More Lorem Yeah This is just random jargon.",
+  description = "",
   uppercased,
   secondaryColor = "#518276",
 }) => {

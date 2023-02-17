@@ -27,7 +27,7 @@ const Services: NextPage = () => {
       </div>
 
       {/* Section Heading */}
-      <SectionHeading title="Services" />
+      <SectionHeading title="Services" uppercased />
 
       {/* Service Cards */}
       <div className="flex w-full items-center justify-between">
