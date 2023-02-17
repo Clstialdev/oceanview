@@ -308,11 +308,7 @@ const Project: NextPage = () => {
             </div> */}
 
             {/* Section Heading */}
-            <SectionHeading
-              title="Images"
-              ornament={ProjectData.name}
-              description="Here is a set of images from this project"
-            />
+            <SectionHeading title="Images" ornament="" description="" />
 
             {/* Images */}
             <div className="mx-auto mt-12 grid w-full  gap-4  sm:grid-cols-2 xxl:grid-cols-4">
