@@ -7,6 +7,7 @@ import Header from "../../components/Header";
 import Contact from "../../sections/Contact";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import ReactPlayer from "react-player/lazy";
 
 import PROJECTS, { type ProjectData } from "../../data/Projects";
 import Link from "next/link";
@@ -65,10 +66,10 @@ const Project: NextPage = () => {
           <Header />
 
           {/* Hero */}
-          <div className="relative max-h-[55vh] min-h-[500px] w-full overflow-hidden">
+          <div className="relative h-[44vh] max-h-[55vh] min-h-[500px] w-full overflow-hidden ">
             <motion.div
               style={{ y, filter: bgFilter }}
-              className="relative h-full w-full"
+              className="relative h-full w-full bg-black"
             >
               {/* BG IMG */}
               <Image
@@ -127,7 +128,7 @@ const Project: NextPage = () => {
 
           {/* Description Section */}
           <div
-            className="relative flex min-h-[580px] w-full px-[10%] pt-20"
+            className="relative flex min-h-[580px] w-full flex-col px-[10%] pt-20 lg:flex-row"
             style={{
               background: `linear-gradient(180deg, ${
                 ProjectData.bgFrom ?? "#271120"
@@ -137,7 +138,7 @@ const Project: NextPage = () => {
             id="about"
           >
             {/* Left */}
-            <div className="relative h-full w-[60%]">
+            <div className="relative h-full w-full lg:w-[60%]">
               {/* Section Heading */}
               <SectionHeading
                 title={ProjectData.name}
@@ -197,8 +198,8 @@ const Project: NextPage = () => {
 
             {/* Right */}
 
-            <div className="mt-[84px] flex w-[40%] flex-col items-center pl-[5%]">
-              <p className="text-right text-beige text-opacity-60">
+            <div className="mt-[84px] flex w-full flex-col items-center lg:w-[40%] lg:pl-[5%]">
+              <p className="text-center text-beige text-opacity-60 lg:text-right">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -208,12 +209,12 @@ const Project: NextPage = () => {
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
 
-              <div className="flex space-x-4">
+              <div className="flex scale-[0.8] space-x-4">
                 {/* Apple store */}
                 {ProjectData.appstoreLink !== undefined && (
                   <Link
                     href={ProjectData.appstoreLink}
-                    className="relative mt-4 flex scale-[0.8] items-center gap-4 rounded border-[1px] border-white border-opacity-20 bg-black bg-opacity-25 p-2  text-2xl text-white backdrop-blur-xl"
+                    className="relative mt-4 flex min-w-[250px] items-center gap-4 rounded border-[1px] border-white border-opacity-20 bg-black bg-opacity-25 p-2  text-2xl text-white backdrop-blur-xl"
                   >
                     <div className="relative h-[60px] w-[60px] overflow-hidden p-2">
                       <Image
@@ -241,7 +242,7 @@ const Project: NextPage = () => {
                 {ProjectData.playstoreLink !== undefined && (
                   <Link
                     href={ProjectData.playstoreLink}
-                    className="relative mt-4 flex scale-[0.8] items-center gap-4 rounded border-[1px] border-white border-opacity-20 bg-black bg-opacity-25 p-2  text-2xl text-white backdrop-blur-xl"
+                    className="relative mt-4 flex min-w-[250px] items-center gap-4 rounded border-[1px] border-white border-opacity-20 bg-black bg-opacity-25 p-2  text-2xl text-white backdrop-blur-xl"
                   >
                     <div className="relative h-[60px] w-[60px] overflow-hidden p-2">
                       <Image
@@ -266,23 +267,36 @@ const Project: NextPage = () => {
                 )}
               </div>
             </div>
-
-            {/* Transition 'rocks' Image */}
-            {/* <div className="absolute bottom-0 left-0 right-0 w-full">
-              <Image
-                src="/Transition2.webp"
-                height={3000} //this is for nextjs image optimization
-                width={3000} //this is for nextjs image optimization
-                style={{
-                  objectFit: "contain",
-                  height: "100%",
-                  width: "100%",
-                }}
-                alt="Transition Image"
-                unoptimized //this is to keep the image clarity
-              />
-            </div> */}
           </div>
+
+          {/* Videos Section */}
+          {ProjectData.video && (
+            <div
+              className="relative w-full px-[10%] pb-12 pt-12"
+              style={{ backgroundColor: ProjectData.bgTo ?? "#10040E" }}
+              id="services"
+            >
+              {/* Section Heading */}
+              <SectionHeading
+                title="Video"
+                ornament=""
+                description=""
+                uppercased
+              />
+
+              {/* Video */}
+              <div className="relative mx-auto mt-12 flex h-[600px] w-full justify-center">
+                <div className="relative h-[calc(1920/1080*60%)] w-full max-w-[1260px] overflow-hidden">
+                  <ReactPlayer
+                    controls
+                    height={"100%"}
+                    width={"100%"}
+                    url={ProjectData.video}
+                  />
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Images Section */}
           <div
@@ -308,7 +322,12 @@ const Project: NextPage = () => {
             </div> */}
 
             {/* Section Heading */}
-            <SectionHeading title="Images" ornament="" description="" uppercased />
+            <SectionHeading
+              title="Images"
+              ornament=""
+              description=""
+              uppercased
+            />
 
             {/* Images */}
             <div className="mx-auto mt-12 grid w-full  gap-4  sm:grid-cols-2 xxl:grid-cols-4">
