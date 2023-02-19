@@ -67,12 +67,16 @@ const Hero: NextPage = () => {
       </motion.div>
 
       {/* Transition 'paper cut' Image */}
-      <div className="absolute -bottom-[4vw] left-0 right-0 max-h-[600px] w-full">
+      <div className="absolute -bottom-[4vw] left-0 right-0 h-[calc(1440px/208*100%)]  w-full">
         <Image
           src="/Transition1Fixed2.webp"
-          height={3000} //this is for nextjs image optimization
-          width={3000} //this is for nextjs image optimization
-          style={{ objectFit: "contain", height: "100%", width: "100%" }}
+          height={208} //this is for nextjs image optimization
+          width={1440} //this is for nextjs image optimization
+          style={{
+            objectFit: "contain",
+            height: "calc(1440px/208*100%)",
+            width: "100%",
+          }}
           alt="Transition Image"
           unoptimized //this is to keep the image clarity
           placeholder="blur"

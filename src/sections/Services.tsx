@@ -13,8 +13,8 @@ const Services: NextPage = () => {
       <div className="absolute top-0 left-0 right-0 max-h-[600px] w-full">
         <Image
           src="/Transition2-1.webp"
-          height={3000} //this is for nextjs image optimization
-          width={3000} //this is for nextjs image optimization
+          height={189} //this is for nextjs image optimization
+          width={2863} //this is for nextjs image optimization
           style={{
             objectFit: "contain",
             height: "100%",
