@@ -38,7 +38,7 @@ Alongside developing our own IP and passion projects we also work with many clie
       </div>
 
       {/* Transition 'rocks' Image */}
-      <div className="absolute bottom-0 left-0 right-0 w-full">
+      <div className="absolute bottom-0 left-0 right-0 max-h-[600px] w-full">
         <Image
           src="/Transition2.webp"
           height={3000} //this is for nextjs image optimization

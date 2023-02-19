@@ -41,7 +41,7 @@ const Hero: NextPage = () => {
           unoptimized //this is to keep the image clarity
           placeholder="blur"
           blurDataURL="/HeroBG 70 Blur.webp"
-/>
+        />
       </motion.div>
 
       <motion.div
@@ -67,7 +67,7 @@ const Hero: NextPage = () => {
       </motion.div>
 
       {/* Transition 'paper cut' Image */}
-      <div className="absolute -bottom-[4vw] left-0 right-0 w-full">
+      <div className="absolute -bottom-[4vw] left-0 right-0 max-h-[600px] w-full">
         <Image
           src="/Transition1Fixed2.webp"
           height={3000} //this is for nextjs image optimization
