@@ -54,11 +54,11 @@ const Contact: NextPage<ContactProps> = ({ bgcolor }) => {
 
   return (
     <div
-      className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#01090B] to-[#000000] px-[5%]"
+      className="relative flex min-h-[780px] w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#01090B] to-[#000000] px-[5%]"
       style={{ background: bgcolor }}
       id="contact"
     >
-      <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden px-[5%]">
+      <div className="relative flex min-h-[880px] w-full flex-col items-center justify-center overflow-hidden px-[5%]">
         <p className=" font-oregon-demibold mb-8 text-[10px] uppercase text-white md:mb-0 md:text-xs">
           Ready for your next project?
         </p>
@@ -127,17 +127,12 @@ const Contact: NextPage<ContactProps> = ({ bgcolor }) => {
             Ocean View Games
           </p>
           <div className="flex w-full justify-center gap-4">
-            <Link href="#">
-              <div className="h-fit w-fit rounded border-[1px] border-white bg-black bg-opacity-20 py-2 px-4 text-white duration-150 hover:cursor-pointer hover:bg-white hover:text-black">
-                LinkedIn
-              </div>
-            </Link>
-            <Link href="#">
+            <Link href="https://www.upwork.com/freelancers/~01a442546a3e86db9b">
               <div className="h-fit w-fit rounded border-[1px] border-white bg-black bg-opacity-20 py-2 px-4 text-white duration-150 hover:cursor-pointer hover:bg-white hover:text-black">
                 Upwork
               </div>
             </Link>
-            <Link href="#">
+            <Link href="https://twitter.com/OceanViewGames/">
               <div className="h-fit w-fit rounded border-[1px] border-white bg-black bg-opacity-20 py-2 px-4 text-white duration-150 hover:cursor-pointer hover:bg-white hover:text-black">
                 Twitter
               </div>

@@ -105,7 +105,7 @@ const Project: NextPage = () => {
                 unoptimized //this is to keep the image clarity
               /> */}
               <motion.h1
-                className="font-alatsi mt-24 text-center text-6xl uppercase text-white drop-shadow-lg"
+                className="font-alatsi mt-20 text-center text-8xl uppercase text-white drop-shadow-lg"
                 style={{ letterSpacing }}
               >
                 {ProjectData.name}
@@ -308,7 +308,7 @@ const Project: NextPage = () => {
             </div> */}
 
             {/* Section Heading */}
-            <SectionHeading title="Images" ornament="" description="" />
+            <SectionHeading title="Images" ornament="" description="" uppercased />
 
             {/* Images */}
             <div className="mx-auto mt-12 grid w-full  gap-4  sm:grid-cols-2 xxl:grid-cols-4">
