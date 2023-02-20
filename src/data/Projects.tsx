@@ -178,7 +178,7 @@ Here at Ocean View Games we are long time fans of the turn-based strategy game g
 This project has cemented a love for our own projects and we will be taking all we have learnt here into our next big venture!
       
       `,
-    banner: "banner.jpg",
+    banner: "banner.webp",
     video: "https://www.youtube.com/watch?v=miJqxbvxkew",
     images: ["0.webp", "1.webp", "2.webp", "3.webp", "4.webp", "5.webp"],
   },

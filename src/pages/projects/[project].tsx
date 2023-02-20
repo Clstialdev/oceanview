@@ -239,7 +239,7 @@ const Project: NextPage = () => {
                   </Link>
                 )}
 
-                {/* Android */}
+                {/* Web */}
                 {ProjectData.webLink !== undefined && (
                   <Link
                     href={ProjectData.webLink}
@@ -290,8 +290,10 @@ const Project: NextPage = () => {
                 <div className="relative h-[calc(1920/1080*60%)] w-full max-w-[1260px] overflow-hidden">
                   <ReactPlayer
                     controls
+                    playing={true}
                     height={"100%"}
                     width={"100%"}
+                    light={<img src={ImageFolder + "video.webp"} alt='Thumbnail' />}
                     url={ProjectData.video}
                   />
                 </div>
