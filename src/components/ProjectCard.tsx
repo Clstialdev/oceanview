@@ -57,7 +57,7 @@ const ProjectCard: NextPage<ProjectCardProps> = ({ project }) => {
               href={project.link}
               className="font-oregon-demibold mb-4 rounded border-[1px] border-white border-opacity-50 bg-black bg-opacity-30 px-2 py-[10px] text-xs uppercase tracking-widest text-white duration-300 hover:border-opacity-100"
             >
-              Explore
+              Explore Project
             </Link>
           </div>
         </div>

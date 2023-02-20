@@ -134,7 +134,7 @@ const Team: NextPage = () => {
                           height: "100%",
                           width: "100%",
                         }}
-                        alt=""
+                        alt={"Ocean View Games Team - " + member.name}
                         unselectable="on"
                         draggable="false"
                       />
