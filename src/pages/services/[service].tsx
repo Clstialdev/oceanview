@@ -108,7 +108,7 @@ const Service: NextPage = () => {
                 unoptimized //this is to keep the image clarity
               /> */}
               <motion.h1
-                className="font-alatsi mt-20 text-center text-8xl uppercase text-white drop-shadow-lg"
+                className="font-alatsi mt-20 text-center text-5xl uppercase text-white drop-shadow-lg lg:text-8xl"
                 style={{ letterSpacing }}
               >
                 {ServiceData.name}
@@ -218,7 +218,6 @@ const Service: NextPage = () => {
             <div
               className="relative w-full px-[10%] pb-12 pt-12"
               style={{ backgroundColor: ServiceData.bgTo ?? "#10040E" }}
-              id="services"
             >
               {/* Section Heading */}
               <SectionHeading
@@ -243,64 +242,46 @@ const Service: NextPage = () => {
           )}
 
           {/* Images Section */}
-          <div
-            className="relative w-full px-[10%] pb-48 pt-12"
-            style={{ backgroundColor: ServiceData.bgTo ?? "#10040E" }}
-            id="services"
-          >
-            {/* Transition 'rocks' Image */}
-            {/* <div className="absolute top-0 left-0 right-0 w-full">
-              <Image
-                src="/Transition2-1.webp"
-                height={3000} //this is for nextjs image optimization
-                width={3000} //this is for nextjs image optimization
-                style={{
-                  objectFit: "contain",
-                  height: "100%",
-                  width: "100%",
-                  // scale: "-1",
-                }}
-                alt="Transition Image"
-                unoptimized //this is to keep the image clarity
-              />
-            </div> */}
+          {ServiceData.images && (
+            <div
+              className="relative w-full px-[10%] pb-48 pt-12"
+              style={{ backgroundColor: ServiceData.bgTo ?? "#10040E" }}
+            >
+              {/* Section Heading */}
 
-            {/* Section Heading */}
-            {ServiceData.images && (
               <SectionHeading
                 title="Images"
                 ornament=""
                 description=""
                 uppercased
               />
-            )}
 
-            {/* Images */}
-            <div className="mx-auto mt-12 grid w-full  gap-4  sm:grid-cols-2 xxl:grid-cols-4">
-              {ServiceData.images &&
-                ServiceData.images.map((image, index) => (
-                  <div
-                    key={index}
-                    className="relative h-auto w-full overflow-hidden"
-                  >
-                    <Image
-                      src={ImageFolder + image}
-                      height={660} //this is for nextjs image optimization
-                      width={480} //this is for nextjs image optimization
-                      style={{
-                        objectFit: "contain",
-                        height: "100%",
-                        width: "100%",
-                      }}
-                      alt=""
-                      unselectable="on"
-                      draggable="false"
-                    />
-                  </div>
-                ))}
+              {/* Images */}
+              <div className="mx-auto mt-12 grid w-full  gap-4  sm:grid-cols-2 xxl:grid-cols-4">
+                {ServiceData.images &&
+                  ServiceData.images.map((image, index) => (
+                    <div
+                      key={index}
+                      className="relative h-auto w-full overflow-hidden"
+                    >
+                      <Image
+                        src={ImageFolder + image}
+                        height={660} //this is for nextjs image optimization
+                        width={480} //this is for nextjs image optimization
+                        style={{
+                          objectFit: "contain",
+                          height: "100%",
+                          width: "100%",
+                        }}
+                        alt=""
+                        unselectable="on"
+                        draggable="false"
+                      />
+                    </div>
+                  ))}
+              </div>
             </div>
-          </div>
-
+          )}
           {/* Contact Us */}
           <Contact bgcolor={ServiceData.bgTo ?? "#10040E"} />
         </main>
