@@ -199,7 +199,7 @@ const Team: NextPage = () => {
             {/* Right */}
             <motion.div
               variants={itemVariant}
-              className="w-full max-w-[1100px] pl-8 lg:block"
+              className="w-full max-w-[1100px] lg:block lg:pl-8"
             >
               <p className="font-oregon whitespace-pre-wrap text-center text-lg text-white md:text-xl lg:text-start lg:text-xl xl:text-2xl">
                 {TEAM_MEMBERS[selectedMember]?.description ?? ""}
