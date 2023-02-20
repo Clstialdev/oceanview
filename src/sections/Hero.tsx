@@ -20,7 +20,10 @@ const Hero: NextPage = () => {
   const logoFilter = useMotionTemplate`blur(${blurValue}) brightness(${darknessValue})`;
   const bgFilter = useMotionTemplate`brightness(${darknessValue})`;
   return (
-    <div className="relative h-screen w-full overflow-hidden" id="hero">
+    <div
+      className="relative h-[70vh] w-full overflow-hidden sm:h-screen"
+      id="hero"
+    >
       <motion.div
         style={{ y, filter: bgFilter }}
         className="relative h-full w-full"
