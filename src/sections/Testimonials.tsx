@@ -110,7 +110,7 @@ const Testimonials: NextPage = () => {
                 width: "100%",
                 rotate: "180deg",
               }}
-              alt="previous testimonial"
+              alt="Previous Testimonial"
             />
           </div>
         )}
@@ -129,7 +129,7 @@ const Testimonials: NextPage = () => {
                 height: "100%",
                 width: "100%",
               }}
-              alt="previous testimonial"
+              alt="Next Testimonial"
             />
           </div>
         )}
@@ -224,7 +224,7 @@ const TestimonialCard: NextPage<TestimonialCardProps> = ({ testimonial }) => {
                 height: "100%",
                 width: "100%",
               }}
-              alt=""
+              alt={testimonial.author}
             />
           </div>
           {/* Right Side */}

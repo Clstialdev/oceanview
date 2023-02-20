@@ -17,7 +17,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Ocean View Games</title>
+        <title>Ocean View Games - Video Game Development Agency</title>
         <meta name="description" content="Ocean View Games is a games studio which undertakes contract work alongside developing their own IP." />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -9,12 +9,14 @@ interface ServiceCardProps {
   title?: string;
   description?: string;
   uppercased?: boolean;
+  altText?: string;
 }
 
 const ServiceCard: NextPage<ServiceCardProps> = ({
   image,
   title = "Title Here",
-  description = "Lorem Ipsum Lorem Ipsum More Lorem Yeah This is just random jargon.",
+  description = "",
+  altText = ""
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -32,7 +34,7 @@ const ServiceCard: NextPage<ServiceCardProps> = ({
             height={600}
             width={600}
             style={{ objectFit: "contain", height: "100%", width: "100%" }}
-            alt=""
+            alt={altText}
           />
         </div>
 

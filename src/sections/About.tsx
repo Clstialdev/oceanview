@@ -28,13 +28,13 @@ Alongside developing our own IP and passion projects we also work with many clie
             height={40} //this is for nextjs image optimization
             width={40} //this is for nextjs image optimization
             style={{ objectFit: "contain", height: "100%", width: "100%" }}
-            alt="Logo"
+            alt="Ocean View Games Logo"
             unoptimized //this is to keep the image clarity
           />
         </div>
-        <h1 className="font-lg font-oregon-light mt-1 uppercase text-beige">
+        <h2 className="font-lg font-oregon-light mt-1 uppercase text-beige">
           Ocean View Games
-        </h1>
+        </h2>
       </div>
 
       {/* Transition 'rocks' Image */}

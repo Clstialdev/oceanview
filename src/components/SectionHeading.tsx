@@ -26,12 +26,12 @@ const SectionHeading: NextPage<SectionHeadingProps> = ({
       </h2>
 
       {/* Title */}
-      <h1
+      <h2
         style={{ textTransform: uppercased ? "uppercase" : "none" }}
         className="font-oregon-demibold text-4xl text-beige sm:text-6xl"
       >
         {title}
-      </h1>
+      </h2>
 
       {/* description */}
       <h2

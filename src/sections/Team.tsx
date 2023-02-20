@@ -14,9 +14,9 @@ const TEAM_MEMBERS = [
     name: "David",
     title: "Director and lead programmer",
     description: `My expertise lies with Unity! I have over a decade of experience as a Unity developer working on projects of all sizes.
-                  My experience ranges from small projects where I was responsible for the entire development and publishing cycle of the project, to large projects working alongside over a dozen developers and artists, each with their own role to play.   
-                  Before founding Ocean View Games to fuel my personal projects and contractual work, I worked as a video game developer in many different roles within the game industry. My proudest achievement from this time in my life was working at Jagex as a Technical Developer, lending my expertise to the development of the MMO RuneScape, a game of which I have been an avid fan for decades!
-                  During my time at Jagex, my expertise in mobile game development was recognised and I was assigned as the lead of the mobile development team, overseeing and leading the push to release old-school RuneScape for mobile devices. Following more than a year of difficult but rewarding work, this product went on to win a Bafta!`,
+My experience ranges from small projects where I was responsible for the entire development and publishing cycle of the project, to large projects working alongside over a dozen developers and artists, each with their own role to play.   
+Before founding Ocean View Games to fuel my personal projects and contractual work, I worked as a video game developer in many different roles within the game industry. My proudest achievement from this time in my life was working at Jagex as a Technical Developer, lending my expertise to the development of the MMO RuneScape, a game of which I have been an avid fan for decades!
+During my time at Jagex, my expertise in mobile game development was recognised and I was assigned as the lead of the mobile development team, overseeing and leading the push to release old-school RuneScape for mobile devices. Following more than a year of difficult but rewarding work, this product went on to win a Bafta!`,
     linkedIn: "https://www.linkedin.com/in/davide2/",
     certification:
       "https://www.youracclaim.com/badges/e13d8602-ce15-452f-b176-ac4a1a15e2ed",
@@ -27,7 +27,7 @@ const TEAM_MEMBERS = [
     name: "Adam",
     title: "Senior programmer",
     description: `With over 10 years of games design and development experience, Adam has collaborated with a wide range of companies throughout his career as a video game developer. This includes game studios (such as Rockstar, Sumo Digital and Square Enix), entertainment (BBC, Nickelodeon, Viacom) and even educational and government institutions.
-                  Adam brings his knowledge as a Unity developer to the team alongside his experience with more low level languages and bespoke hardware.`,
+Adam brings his knowledge as a Unity developer to the team alongside his experience with more low level languages and bespoke hardware.`,
     linkedIn: "https://www.linkedin.com/in/adam-kaye-306985116/",
     image: "adam.webp",
     pushDown: true,
@@ -182,7 +182,7 @@ const Team: NextPage = () => {
                         height: "100%",
                         width: "100%",
                       }}
-                      alt=""
+                      alt=" Ocean View Games Team Member"
                       unselectable="on"
                       draggable="false"
                     />

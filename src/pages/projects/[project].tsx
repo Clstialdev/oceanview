@@ -56,8 +56,8 @@ const Project: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Ocean View Games </title>
-        <meta name="description" content="Ocean View Games is a ..." />
+        <title>Ocean View Games - {ProjectData.name}</title>
+        <meta name="description" content={"Ocean View Games - " + ProjectData.name} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {projectId && ProjectData && (
@@ -82,7 +82,7 @@ const Project: NextPage = () => {
                   width: "100%",
                   marginTop: "-1px",
                 }}
-                alt="Beautiful Scenery of a vintage room looking out into the ocean through open double doors"
+                alt={ProjectData.name + " Background"}
                 unoptimized //this is to keep the image clarity
               />
             </motion.div>
@@ -170,31 +170,10 @@ const Project: NextPage = () => {
                   </ul>
                 </div>
               )}
+            </div>
 
               {/* Section Divider */}
-              <div className="mt-12 mb-6 h-[2px] w-1/2 bg-white bg-opacity-20"></div>
 
-              {/* Branding */}
-              <div className="flex items-center gap-4">
-                <div className="relative h-[50px] w-[50px]">
-                  <Image
-                    src="/logobeige.webp"
-                    height={40} //this is for nextjs image optimization
-                    width={40} //this is for nextjs image optimization
-                    style={{
-                      objectFit: "contain",
-                      height: "100%",
-                      width: "100%",
-                    }}
-                    alt="Logo"
-                    unoptimized //this is to keep the image clarity
-                  />
-                </div>
-                <h1 className="font-lg font-oregon-light mt-1 uppercase text-beige">
-                  {ProjectData.source ?? "Ocean View Games"}
-                </h1>
-              </div>
-            </div>
 
             {/* Right */}
 
@@ -226,7 +205,7 @@ const Project: NextPage = () => {
                           height: "100%",
                           width: "100%",
                         }}
-                        alt="download from appstore"
+                        alt="download from apple app store"
                         unselectable="on"
                         draggable="false"
                       />
@@ -254,7 +233,7 @@ const Project: NextPage = () => {
                           height: "100%",
                           width: "100%",
                         }}
-                        alt="download from appstore"
+                        alt="download from Google Play store"
                         unselectable="on"
                         draggable="false"
                       />
@@ -345,7 +324,7 @@ const Project: NextPage = () => {
                       height: "100%",
                       width: "100%",
                     }}
-                    alt=""
+                    alt={ProjectData.name + " Image " + index}
                     unselectable="on"
                     draggable="false"
                   />

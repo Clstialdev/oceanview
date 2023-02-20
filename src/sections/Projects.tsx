@@ -7,30 +7,33 @@ const FLAGSHIP_PROJECTS = [
     link: "/projects/domi",
     logo: "/projects/domi/logo.png",
     image: "/projects/domi/bg.png",
+    name: "Domi Online",
   },
   {
     link: "/projects/runescape",
     logo: "/projects/runescape/logo.png",
     image: "/projects/runescape/bg.png",
+    name: "RuneScape"
   },
 ];
 
 const CONTRACT_AND_EMPLOYMENT = [
-  { link: "/projects/pocketfactory", image: "/projects/pocketfactory/bg.webp" },
-  { link: "/projects/novablast", image: "/projects/novablast/bg.webp" },
-  { link: "/projects/nub", image: "/projects/nub/bg.webp" },
+  { link: "/projects/pocketfactory", image: "/projects/pocketfactory/bg.webp", name: "Pocket Factory" },
+  { link: "/projects/novablast", image: "/projects/novablast/bg.webp", name: "Nova Blast" },
+  { link: "/projects/nub", image: "/projects/nub/bg.webp", name: "Nub" },
   {
     link: "/projects/stoneyvocabbuilder",
     image: "/projects/stoneyvocabbuilder/bg.webp",
+    name: "Vocab Builder"
   },
-  { link: "/projects/wordfunworld", image: "/projects/wordfunworld/bg.webp" },
-  { link: "/projects/navigo", image: "/projects/navigo/bg.webp" }
+  { link: "/projects/wordfunworld", image: "/projects/wordfunworld/bg.webp",name: "Word Fun World" },
+  { link: "/projects/navigo", image: "/projects/navigo/bg.webp",name: "Navigo" }
 ];
 
 const SELF_PUBLISHED = [
-  { link: "/projects/timerunner", image: "/projects/timerunner/bg.webp" },
-  { link: "/projects/empiresrise", image: "/projects/empiresrise/bg.webp" },
-  { link: "/projects/whatsthat", image: "/projects/whatsthat/bg.webp" },
+  { link: "/projects/timerunner", image: "/projects/timerunner/bg.webp", name: "Time Runner" },
+  { link: "/projects/empiresrise", image: "/projects/empiresrise/bg.webp", name: "Empires Rise" },
+  { link: "/projects/whatsthat", image: "/projects/whatsthat/bg.webp",name: "Whats That" },
 ];
 
 const Projects: NextPage = () => {

@@ -66,7 +66,7 @@ const Header: NextPage = () => {
         >
           {/* Logo */}
           <div className="relative h-[40px] w-[40px] sm:h-[60px] sm:w-[60px]">
-            <Image src="/logo.webp" height={100} width={100} alt="" />
+            <Image src="/logo.webp" height={100} width={100} alt="Ocean View Games" />
           </div>
           {/* Typography */}
           <div className="relative mt-[9px] h-[40px] w-auto sm:h-[40px]">
@@ -74,7 +74,7 @@ const Header: NextPage = () => {
               src="/typography.webp"
               height={300}
               width={300}
-              alt=""
+              alt="Ocean View Games Text"
               style={{
                 objectFit: "contain",
                 height: "100%",

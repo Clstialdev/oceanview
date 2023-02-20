@@ -38,6 +38,7 @@ const Services: NextPage = () => {
               image="/services/gamedes.webp"
               title="Game Development"
               description="We leverage our expertise as Unity developers to create great games or rapid prototypes"
+              altText="Game Development Service"
             />
           </div>
           <div className="flex w-full items-center justify-center">
@@ -46,6 +47,7 @@ const Services: NextPage = () => {
               image="/services/mobile.webp"
               title="Mobile Development"
               description="We provide advice and development services to get the most out of your app"
+              altText="Mobile Development Service"
             />
           </div>
           <div className="flex w-full items-center justify-center">
@@ -54,6 +56,7 @@ const Services: NextPage = () => {
               image="/services/monetization.webp"
               title="Monetization"
               description="We can integrate several different ad-networks and IAPs to help monetise your game"
+              altText="Monetization Service"
             />
           </div>
           <div className="flex w-full items-center justify-center">
@@ -62,6 +65,7 @@ const Services: NextPage = () => {
               image="/services/octopus.webp"
               title="Game Design, Advice & Guidance"
               description="We work closely with our collaborators to ensure their vision aligns with their audience expectations and project scope"
+              altText="Game Design Service"
             />
           </div>
         </div>
