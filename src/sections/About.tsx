@@ -13,9 +13,11 @@ const About: NextPage = () => {
       <SectionHeading title="About Us" uppercased />
 
       {/* Description */}
-      <p className="font-oregon-demibold whitespace-pre-wrap text-xl text-beige">{`Our video game development and consultancy team is based in the South West of England, Ocean View Games is a company of Unity and mobile game developers who are passionate about game design, development and guidance.
-Our team is backed up by years of industry experience working at high profile game studios including Jagex, Kwalee, and Fishinabottle.
-Alongside developing our own IP and passion projects we also work with many clients around the world, helping them to realize the potential of their projects through design, implementation and game consultancy. Interested in working with us? Click the button below.`}</p>
+      <p className="font-oregon-demibold whitespace-pre-wrap text-xl text-beige">{`With a combined experience of over 20 years, your project is in safe hands. Our team brings a whole breadth of experience, from working on large games projects at renowned game studios such as Jagex and Rockstar, to smaller more bespoke experiences for entertainment and educational institutions, such as the BBC and Cambridge University Press.`}</p>
+      <p className="font-oregon-demibold whitespace-pre-wrap text-xl text-beige">{`
+Our background has provided us with opportunities to collaborate with various different teams from various different backgrounds. Our experience includes working alongside existing teams to collaborate and create large-scale projects as well as operating as a dedicated resource on smaller scale, bespoke experiences.`}</p>
+      <p className="font-oregon-demibold whitespace-pre-wrap text-xl text-beige">{`
+Our experience includes Game Design as well as Games Development. Got a cool idea and need to know the best way to see that idea realised? Let us work with you to help make your idea a reality!`}</p>
 
       {/* Section Divider */}
       <div className="mt-12 mb-6 h-[2px] w-1/2 bg-white bg-opacity-20"></div>

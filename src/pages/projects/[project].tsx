@@ -80,7 +80,7 @@ const Project: NextPage = () => {
                   objectFit: "cover",
                   height: "100%",
                   width: "100%",
-                  marginTop: "-1px",
+                  
                 }}
                 alt={(ProjectData.name ?? "loading...")+ " Background"}
 
@@ -149,7 +149,7 @@ const Project: NextPage = () => {
               />
 
               {/* Description */}
-              <p className="font-oregon-demibold max-w-[1200px] whitespace-pre-wrap text-xl text-beige">
+              <p className="max-w-[1200px] whitespace-pre-wrap text-xl text-beige">
                 {ProjectData.description}
               </p>
 
@@ -179,14 +179,7 @@ const Project: NextPage = () => {
             {/* Right */}
 
             <div className="mt-[84px] flex w-full flex-col items-center lg:w-[40%] lg:pl-[5%]">
-              <p className="text-center text-beige text-opacity-60 lg:text-right">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <p className="text-center text-beige text-opacity-60 lg:text-right"> {ProjectData.rightSide}
               </p>
 
               <div className="flex scale-[0.8] space-x-4">
@@ -198,7 +191,7 @@ const Project: NextPage = () => {
                   >
                     <div className="relative h-[60px] w-[60px] overflow-hidden p-2">
                       <Image
-                        src={"/projects/applelogo.png"}
+                        src={"/projects/applelogo.webp"}
                         height={660} //this is for nextjs image optimization
                         width={480} //this is for nextjs image optimization
                         style={{
@@ -226,7 +219,7 @@ const Project: NextPage = () => {
                   >
                     <div className="relative h-[60px] w-[60px] overflow-hidden p-2">
                       <Image
-                        src={"/projects/playstorelogo.png"}
+                        src={"/projects/playstorelogo.webp"}
                         height={660} //this is for nextjs image optimization
                         width={480} //this is for nextjs image optimization
                         style={{
@@ -242,6 +235,34 @@ const Project: NextPage = () => {
                     <div>
                       <p className="text-xl">Download on the</p>
                       <p>Play Store</p>
+                    </div>
+                  </Link>
+                )}
+
+                {/* Android */}
+                {ProjectData.webLink !== undefined && (
+                  <Link
+                    href={ProjectData.webLink}
+                    className="relative mt-4 flex min-w-[250px] items-center gap-4 rounded border-[1px] border-white border-opacity-20 bg-black bg-opacity-25 p-2  text-2xl text-white backdrop-blur-xl"
+                  >
+                    <div className="relative h-[60px] w-[60px] overflow-hidden p-2">
+                      <Image
+                        src={"/projects/weblogo.webp"}
+                        height={660} //this is for nextjs image optimization
+                        width={480} //this is for nextjs image optimization
+                        style={{
+                          objectFit: "contain",
+                          height: "100%",
+                          width: "100%",
+                        }}
+                        alt="download from Google Play store"
+                        unselectable="on"
+                        draggable="false"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-xl">Click Here</p>
+                      <p>For Website</p>
                     </div>
                   </Link>
                 )}

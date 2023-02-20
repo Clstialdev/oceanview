@@ -1,21 +1,30 @@
 const PROJECTS = {
   domi: {
     name: "Domi Online",
-    description: `Currently David is the Lead Game Developer and Adam as a senior developer. Together we are building Domi Online
-  
+    description: `DOMI Online is an MMORPG currently in development which aims to build upon the rich heritage provided by the many successful MMORPG titles which have created a thriving market for more than two decades.
+
 Domi Online offers players an expansive medieval metaverse filled with forests, caves, and deserts among other varied and secret-filled areas open to discovery, adventure, and ultimate domination.
       
-Featuring gameplay that incentivizes a player’s commitment to developing in-game skills and to increasing in-game status through an intricate levelling system, in a world featuring premier graphics and design, Domi Online ushers in a new era for first-person POV MMORPGs. An active community of gamers is the engine that drives the engagement and sustainability of Domi’s play-to-earn model into new realms of gaming experience. Domi Online offers players an expansive medieval metaverse filled with forests, caves, and deserts among other varied and secret-filled areas open to discovery, adventure, and ultimate domination. Featuring gameplay that incentivizes a player’s commitment to developing in-game skills and to increasing in-game status through an intricate levelling system, in a world featuring premier graphics and design, Domi Online ushers in a new era for first-person POV MMORPGs. An active community of gamers is the engine that drives the engagement and sustainability of Domi’s play-to-earn model into new realms of gaming experience.`,
+Featuring gameplay that incentivizes a player’s commitment to developing in-game skills and to increasing in-game status through an intricate levelling system, in a world featuring premier graphics and design, Domi Online ushers in a new era for first-person POV MMORPGs. An active community of gamers is the engine that drives the engagement and sustainability of Domi’s play-to-earn model into new realms of gaming experience. Domi Online offers players an expansive medieval metaverse filled with forests, caves, and deserts among other varied and secret-filled areas open to discovery, adventure, and ultimate domination. Featuring gameplay that incentivizes a player’s commitment to developing in-game skills and to increasing in-game status through an intricate levelling system, in a world featuring premier graphics and design, Domi Online ushers in a new era for first-person POV MMORPGs. An active community of gamers is the engine that drives the engagement and sustainability of Domi’s play-to-earn model into new realms of gaming experience.
+
+DOMI Online looks to cater to various different players who expect different experiences from their MMORPGs, whether that is players who want to fully engross themselves in the gameplay to optimise their character as efficiently as possible, or players looking for a more hands-off experience which can reward more idle gameplay.
+
+Working alongside a world-wide team, we are collaborating with people with the entire range of skillsets, from environment and characters artists to market experts and voice artists, and even chart-topping rock stars!
+`,
     thingsDone: [
       "Hiring a world class team with developers, artists and sound engineers from all over the world",
       "Building core systems such as combat, skilling, movement, networking",
       "Project management on Jira",
-      "Documentation creation on Notion",
+      "Creating and maintain Games Design documentation with Notion",
+      "Battle Design and implementation designed to scale with the player",
     ],
-    banner: "banner.jpg",
+    rightSide: "DOMI Online is currently in development and accepting players eager to try the game out. For more information about the DOMI Online project, including how to sign up and get involved in the game, follow the link below.   ",
+    banner: "banner.webp",
     images: ["1.webp", "2.webp", "3.webp"],
     bgFrom: "#272511",
     bgTo: "#151207",
+    webLink: "https://domionline.io",
+    
   },
 
   runescape: {
@@ -29,8 +38,8 @@ Featuring gameplay that incentivizes a player’s commitment to developing in-ga
       "Implementing numerous performance improvements that benefit both desktop and mobile",
       "Communicating with the players during the open beta, taking feedback, and resolving any critical issues",
     ],
-    video: "https://www.youtube.com/1648afc1-2fbf-4338-837a-7a380ef494b4",
-    banner: "banner.jpg",
+    video: "https://youtu.be/AoWEgWU2ecI",
+    banner: "banner.webp",
     images: ["1.webp", "2.webp", "3.webp"],
     bgFrom: "#111827",
     bgTo: "#070d15",
@@ -50,6 +59,7 @@ Foilhat Games were extremely happy with the results, providing us with a 5 star 
     bgFrom: "#000000",
     bgTo: "#101010",
   },
+  
   pocketfactory: {
     name: "Pocket Factory",
     appstoreLink: "https://apps.apple.com/us/app/pocket-factory/id1487471914",
@@ -62,6 +72,7 @@ Here we worked alongside the Mojo Games team from the ground up, assisting with 
     bgFrom: "#112527",
     bgTo: "#071615",
   },
+  
   nub: {
     name: "Nub",
     description: `I was tasked from Inferna Games to help remake Nub from the ground up in Unity. Nub was originally released for the discontinued Ouya Android game console. As it was originally built as a native Java app its would be very hard to port it to iOS, Android and Steam so it was decided to remake it.
@@ -73,6 +84,7 @@ Here we worked alongside the Mojo Games team from the ground up, assisting with 
     bgFrom: "#000000",
     bgTo: "#101010",
   },
+  
   stoneyvocabbuilder: {
     name: "Vocab Builder",
     playstoreLink:
@@ -88,29 +100,43 @@ Please look at The Language Conservatory to see their extraordinary work in maki
     bgFrom: "#10261b",
     bgTo: "#07160d",
   },
+  
   wordfunworld: {
     name: "Word Fun World",
     appstoreLink: "https://apps.apple.com/app/id977951003",
     playstoreLink:
       "https://play.google.com/store/apps/details?id=com.Cambridge.WordFunWorld2",
-    description: `World Fun World is a project that was commissioned by Cambridge University Press during my time at fishinabottle. The aim of the game is to help teach young children English as a primary language.
-  
-My role within the project was to act as the lead developer, working alongside the lead artist to assist the client from the initial design phase and throughout development.
+    description: `Word Fun World is a game designed for mobile devices with the aim of teaching young children English as a primary language. The game was designed to be used by both eager young learners taking initiative with their language learning as well as a learning aid which would be used alongside traditional teaching.
+    
+World Fun World was commissioned by Cambridge University Press. We worked closely with Educational and Technical specialists at the institution to ensure that the final product would be and appropriate and effective learning tool for the target audience whilst also adhering to the exceptionally high standards already set by other Cambridge University Press products.
       
-Utilising Unity for rapid prototyping and deployment to multiple platforms, we were able to realise the clients vision for the game in just a few short months. The game went on to be a great success for Cambridge Unity Press, who soon returned to the company requesting further updates and features to improve upon the game even further.
+Our role was to work with the client to design and develop various mini-games which would be appropriate for the target audience whilst also achieving the educational aims for the project. We worked in collaboration with a number of artists from initial design all the way through full development.
       
-This project was completed during Adam's previous employment.`,
+Utilising Unity for rapid prototyping and deployment to multiple platforms, we were able to realise the clients vision for the game in just a few short months. The game went on to be a great success for Cambridge Unity Press, who soon returned to the company requesting further updates and features to improve upon the game even further.`,
     banner: "banner.jpg",
     video: "https://www.youtube.com/watch?v=TSy0vGhX1pk&t",
     images: ["0.webp", "1.webp", "2.webp", "3.webp"],
     bgFrom: "#10261b",
     bgTo: "#07160d",
+    rightSide: "The Word Fun World project is now complete and is available for download on both the App Store and the Play Store at the links below.",
+    
   },
+  
   navigo: {
     name: "Navigo",
     playstoreLink:
       "https://play.google.com/store/apps/details?id=com.fishinabottle.navigo", //URL was not found
-    description: `Working in collaboration with a more than a dozen educational and technical institutions across Europe, Navigo is an ambitious game for android tablets which aims to assist children learning English, German, Spanish or Greek as a first language. The game was designed to be used alongside traditional learning to help reinforce the teaching while encouraging children to go above and beyond with a compelling storyline and engaging game mechanics.`,
+    description: `Navigo is an ambitious game for android tablets which aims to assist children learning English, German, Spanish or Greek as a first language. The game was designed to be used alongside traditional learning to help reinforce the teaching while encouraging children to go above and beyond with a compelling storyline and engaging game mechanics.
+
+We worked in collaboration with more than a dozen educational and technical institutions across Europe. We were responsible for processing the information received from various universities across Europe and using it to Design and create various different mini-games which would help to teach children core principles in language learning.
+
+This project required us to go above and beyond the usual call of game development, working in close collaboration with multiple sources to design and create compelling and effective learning games contained within an appealing world.
+
+The game was focus tested with various different age and learning groups throughout development, which provided inciteful feedback and allowed us to refine the our game designs to meet the needs of the target audience.
+
+Ultimately all of this dedication paid off as the game received an award from the Serious Games Society in the Digital Game Competition as well as receiving glowing reviews from the focus testers and the schools themselves.
+    
+    `,
     banner: "2.webp",
     images: ["0.webp", "1.webp", "2.webp", "3.webp", "4.webp"],
     thingsDone: [
@@ -120,9 +146,11 @@ This project was completed during Adam's previous employment.`,
       "Comprehensive data collection on player performance to dynamically determine the difficulty of the content being taught to the player",
       "The game went on to win an award from the Serious Games Society in the Digital Games Competition",
     ],
+    rightSide: "The testing phase for Navigo has now completed and is under review for further expansion. More information about the project as a whole can be found at the google play store link below. ",
     bgFrom: "#272111",
     bgTo: "#161108",
   },
+  
   timerunner: {
     name: "Time Runner",
     appstoreLink: "https://apps.apple.com/us/app/empires-rise/id1578743218",
@@ -137,6 +165,7 @@ Also, we wanted to use rigid bodies and physics as its always fun to make games 
     bgFrom: "#101c26",
     bgTo: "#071014",
   },
+  
   empiresrise: {
     name: "Empires Rise",
     appstoreLink: "https://apps.apple.com/us/app/empires-rise/id1546243739",
@@ -153,6 +182,7 @@ This project has cemented a love for our own projects and we will be taking all 
     video: "https://www.youtube.com/watch?v=miJqxbvxkew",
     images: ["0.webp", "1.webp", "2.webp", "3.webp", "4.webp", "5.webp"],
   },
+  
   whatsthat: {
     name: "What's That",
     appstoreLink: "https://apps.apple.com/us/app/what-is-that/id1551655212",
@@ -179,6 +209,7 @@ export type ProjectData = {
   name: string;
   appstoreLink?: string;
   playstoreLink?: string;
+  webLink?: string;
   description: string;
   source?: string;
   banner: string;
@@ -187,4 +218,5 @@ export type ProjectData = {
   thingsDone?: Array<string>;
   bgFrom?: string;
   bgTo?: string;
+  rightSide?: string;
 };
