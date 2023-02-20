@@ -48,6 +48,10 @@ const Header: NextPage = () => {
     }),
   };
 
+  useEffect(() => {
+    console.log(overlayMenuVisible);
+  }, [overlayMenuVisible]);
+
   return (
     <>
       <motion.header
@@ -66,7 +70,12 @@ const Header: NextPage = () => {
         >
           {/* Logo */}
           <div className="relative h-[40px] w-[40px] sm:h-[60px] sm:w-[60px]">
-            <Image src="/logo.webp" height={100} width={100} alt="Ocean View Games" />
+            <Image
+              src="/logo.webp"
+              height={100}
+              width={100}
+              alt="Ocean View Games"
+            />
           </div>
           {/* Typography */}
           <div className="relative mt-[9px] h-[40px] w-auto sm:h-[40px]">
@@ -103,7 +112,7 @@ const Header: NextPage = () => {
         </div>
       </motion.header>
 
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="popLayout">
         {/* Hamburger Menu OverLay */}
         {overlayMenuVisible && (
           <motion.div

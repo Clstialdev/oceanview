@@ -9,7 +9,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import ReactPlayer from "react-player/lazy";
 
-import PROJECTS, { type ProjectData } from "../../data/Projects";
+import SERVICES, { type ServiceData } from "../../data/Services";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
@@ -21,25 +21,25 @@ import {
 } from "framer-motion";
 import SectionHeading from "../../components/SectionHeading";
 
-const Project: NextPage = () => {
+const Service: NextPage = () => {
   const router = useRouter();
-  const projectId = (router.query.project as string) ?? "";
+  const serviceId = (router.query.service as string) ?? "";
 
-  const ImageFolder = "/projects/" + projectId + "/";
+  const ImageFolder = "/services/" + serviceId + "/";
 
-  const ProjectData = (PROJECTS as any)[projectId] as ProjectData;
+  const ServiceData = (SERVICES as any)[serviceId] as ServiceData;
 
   useEffect(() => {
-    const AvailableProjects = Object.keys(PROJECTS);
+    const AvailableServices = Object.keys(SERVICES);
     if (
-      !AvailableProjects.includes(projectId) &&
-      projectId !== "" &&
+      !AvailableServices.includes(serviceId) &&
+      serviceId !== "" &&
       window !== undefined
     ) {
       window.location.href = "/404";
-      console.log(ProjectData);
+      console.log(ServiceData);
     }
-  }, [projectId]);
+  }, [serviceId]);
 
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: heroRef });
@@ -53,16 +53,16 @@ const Project: NextPage = () => {
   const logoFilter = useMotionTemplate`blur(${blurValue}) brightness(${darknessValue})`;
   const bgFilter = useMotionTemplate`brightness(${darknessValue})`;
 
-  const pageTitle = ProjectData !== undefined ? ProjectData.name : "";
+  const pageTitle = ServiceData !== undefined ? ServiceData.name : "";
 
   return (
     <>
       <Head>
         <title>{`Ocean View Games - ${pageTitle} `}</title>
-        <meta name="description" content={"Ocean View Games"} />
+        <meta name="description" content="Ocean View Games is a ..." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {projectId && ProjectData && (
+      {serviceId && ServiceData && (
         <main id="main" className="relative h-fit min-h-screen w-full">
           {/* Header */}
           <Header />
@@ -75,15 +75,16 @@ const Project: NextPage = () => {
             >
               {/* BG IMG */}
               <Image
-                src={ImageFolder + ProjectData.banner}
+                src={ImageFolder + ServiceData.banner}
                 height={3000} //this is for nextjs image optimization
                 width={3000} //this is for nextjs image optimization
                 style={{
                   objectFit: "cover",
                   height: "100%",
                   width: "100%",
+                  marginTop: "-1px",
                 }}
-                alt={(ProjectData.name ?? "loading...") + " Background"}
+                alt="Beautiful Scenery of a vintage room looking out into the ocean through open double doors"
                 unoptimized //this is to keep the image clarity
               />
             </motion.div>
@@ -110,7 +111,7 @@ const Project: NextPage = () => {
                 className="font-alatsi mt-20 text-center text-8xl uppercase text-white drop-shadow-lg"
                 style={{ letterSpacing }}
               >
-                {ProjectData.name}
+                {ServiceData.name}
               </motion.h1>
             </motion.div>
 
@@ -132,9 +133,9 @@ const Project: NextPage = () => {
             className="relative flex min-h-[580px] w-full flex-col px-[10%] pt-20 lg:flex-row"
             style={{
               background: `linear-gradient(180deg, ${
-                ProjectData.bgFrom ?? "#271120"
-              } 0%, ${ProjectData.bgTo ?? "#10040E"} 100%`,
-              paddingBottom: ProjectData.thingsDone ? "96px" : "48px",
+                ServiceData.bgFrom ?? "#271120"
+              } 0%, ${ServiceData.bgTo ?? "#10040E"} 100%`,
+              paddingBottom: ServiceData.offering ? "96px" : "48px",
             }}
             id="about"
           >
@@ -142,140 +143,81 @@ const Project: NextPage = () => {
             <div className="relative h-full w-full lg:w-[60%]">
               {/* Section Heading */}
               <SectionHeading
-                title={ProjectData.name}
+                title={ServiceData.name}
                 uppercased
                 ornament=""
                 description=""
               />
 
               {/* Description */}
-              <p className="max-w-[1200px] whitespace-pre-wrap text-xl text-beige">
-                {ProjectData.description}
+              <p className="font-oregon-demibold max-w-[1200px] whitespace-pre-wrap text-xl text-beige">
+                {ServiceData.description}
               </p>
 
-              {ProjectData.thingsDone && (
+              {ServiceData.offering && (
                 <div
                   className="mt-12 rounded border-r-[1px] border-t-[1px] border-l-[1px] border-white border-opacity-5 py-2 px-4 text-white"
                   style={{
                     backgroundColor:
-                      (ProjectData.bgTo as string) + "26" ?? "#10040E26",
+                      (ServiceData.bgTo as string) + "26" ?? "#10040E26",
                   }}
                 >
                   <h2 className="text-xl font-bold text-beige">
-                    Here is a list of some of the work we have done:
+                    Services we provide:
                   </h2>
                   <ul className="mt-2 list-disc pl-4 text-beige">
-                    {ProjectData.thingsDone.map((item, index) => (
+                    {ServiceData.offering.map((item, index) => (
                       <li key={index}>{item}</li>
                     ))}
                   </ul>
                 </div>
               )}
-            </div>
 
-            {/* Section Divider */}
+              {/* Section Divider */}
+              <div className="mt-12 mb-6 h-[2px] w-1/2 bg-white bg-opacity-20"></div>
+
+              {/* Branding */}
+              <div className="flex items-center gap-4">
+                <div className="relative h-[50px] w-[50px]">
+                  <Image
+                    src="/logobeige.webp"
+                    height={40} //this is for nextjs image optimization
+                    width={40} //this is for nextjs image optimization
+                    style={{
+                      objectFit: "contain",
+                      height: "100%",
+                      width: "100%",
+                    }}
+                    alt="Logo"
+                    unoptimized //this is to keep the image clarity
+                  />
+                </div>
+                <h1 className="font-lg font-oregon-light mt-1 uppercase text-beige">
+                  {"Ocean View Games"}
+                </h1>
+              </div>
+            </div>
 
             {/* Right */}
 
             <div className="mt-[84px] flex w-full flex-col items-center lg:w-[40%] lg:pl-[5%]">
               <p className="text-center text-beige text-opacity-60 lg:text-right">
-                {" "}
-                {ProjectData.rightSide}
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
-
-              <div className="flex scale-[0.8] space-x-4">
-                {/* Apple store */}
-                {ProjectData.appstoreLink !== undefined && (
-                  <Link
-                    href={ProjectData.appstoreLink}
-                    className="relative mt-4 flex min-w-[250px] items-center gap-4 rounded border-[1px] border-white border-opacity-20 bg-black bg-opacity-25 p-2  text-2xl text-white backdrop-blur-xl"
-                  >
-                    <div className="relative h-[60px] w-[60px] overflow-hidden p-2">
-                      <Image
-                        src={"/projects/applelogo.webp"}
-                        height={660} //this is for nextjs image optimization
-                        width={480} //this is for nextjs image optimization
-                        style={{
-                          objectFit: "contain",
-                          height: "100%",
-                          width: "100%",
-                        }}
-                        alt="download from apple app store"
-                        unselectable="on"
-                        draggable="false"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-xl">Download on the</p>
-                      <p>App Store</p>
-                    </div>
-                  </Link>
-                )}
-
-                {/* Android */}
-                {ProjectData.playstoreLink !== undefined && (
-                  <Link
-                    href={ProjectData.playstoreLink}
-                    className="relative mt-4 flex min-w-[250px] items-center gap-4 rounded border-[1px] border-white border-opacity-20 bg-black bg-opacity-25 p-2  text-2xl text-white backdrop-blur-xl"
-                  >
-                    <div className="relative h-[60px] w-[60px] overflow-hidden p-2">
-                      <Image
-                        src={"/projects/playstorelogo.webp"}
-                        height={660} //this is for nextjs image optimization
-                        width={480} //this is for nextjs image optimization
-                        style={{
-                          objectFit: "contain",
-                          height: "100%",
-                          width: "100%",
-                        }}
-                        alt="download from Google Play store"
-                        unselectable="on"
-                        draggable="false"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-xl">Download on the</p>
-                      <p>Play Store</p>
-                    </div>
-                  </Link>
-                )}
-
-                {/* Web */}
-                {ProjectData.webLink !== undefined && (
-                  <Link
-                    href={ProjectData.webLink}
-                    className="relative mt-4 flex min-w-[250px] items-center gap-4 rounded border-[1px] border-white border-opacity-20 bg-black bg-opacity-25 p-2  text-2xl text-white backdrop-blur-xl"
-                  >
-                    <div className="relative h-[60px] w-[60px] overflow-hidden p-2">
-                      <Image
-                        src={"/projects/weblogo.webp"}
-                        height={660} //this is for nextjs image optimization
-                        width={480} //this is for nextjs image optimization
-                        style={{
-                          objectFit: "contain",
-                          height: "100%",
-                          width: "100%",
-                        }}
-                        alt="download from Google Play store"
-                        unselectable="on"
-                        draggable="false"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-xl">Click Here</p>
-                      <p>For Website</p>
-                    </div>
-                  </Link>
-                )}
-              </div>
             </div>
           </div>
 
           {/* Videos Section */}
-          {ProjectData.video && (
+          {ServiceData.video && (
             <div
               className="relative w-full px-[10%] pb-12 pt-12"
-              style={{ backgroundColor: ProjectData.bgTo ?? "#10040E" }}
+              style={{ backgroundColor: ServiceData.bgTo ?? "#10040E" }}
               id="services"
             >
               {/* Section Heading */}
@@ -291,13 +233,9 @@ const Project: NextPage = () => {
                 <div className="relative h-[calc(1920/1080*60%)] w-full max-w-[1260px] overflow-hidden">
                   <ReactPlayer
                     controls
-                    playing={true}
                     height={"100%"}
                     width={"100%"}
-                    light={
-                      <img src={ImageFolder + "video.webp"} alt="Thumbnail" />
-                    }
-                    url={ProjectData.video}
+                    url={ServiceData.video}
                   />
                 </div>
               </div>
@@ -307,7 +245,7 @@ const Project: NextPage = () => {
           {/* Images Section */}
           <div
             className="relative w-full px-[10%] pb-48 pt-12"
-            style={{ backgroundColor: ProjectData.bgTo ?? "#10040E" }}
+            style={{ backgroundColor: ServiceData.bgTo ?? "#10040E" }}
             id="services"
           >
             {/* Transition 'rocks' Image */}
@@ -328,48 +266,47 @@ const Project: NextPage = () => {
             </div> */}
 
             {/* Section Heading */}
-            <SectionHeading
-              title="Images"
-              ornament=""
-              description=""
-              uppercased
-            />
+            {ServiceData.images && (
+              <SectionHeading
+                title="Images"
+                ornament=""
+                description=""
+                uppercased
+              />
+            )}
 
             {/* Images */}
             <div className="mx-auto mt-12 grid w-full  gap-4  sm:grid-cols-2 xxl:grid-cols-4">
-              {ProjectData.images.map((image, index) => (
-                <div
-                  key={index}
-                  className="relative h-auto w-full overflow-hidden"
-                >
-                  <Image
-                    src={ImageFolder + image}
-                    height={660} //this is for nextjs image optimization
-                    width={480} //this is for nextjs image optimization
-                    style={{
-                      objectFit: "contain",
-                      height: "100%",
-                      width: "100%",
-                    }}
-                    alt={
-                      (ProjectData.name ?? "loading...") +
-                      " Image " +
-                      index.toString()
-                    }
-                    unselectable="on"
-                    draggable="false"
-                  />
-                </div>
-              ))}
+              {ServiceData.images &&
+                ServiceData.images.map((image, index) => (
+                  <div
+                    key={index}
+                    className="relative h-auto w-full overflow-hidden"
+                  >
+                    <Image
+                      src={ImageFolder + image}
+                      height={660} //this is for nextjs image optimization
+                      width={480} //this is for nextjs image optimization
+                      style={{
+                        objectFit: "contain",
+                        height: "100%",
+                        width: "100%",
+                      }}
+                      alt=""
+                      unselectable="on"
+                      draggable="false"
+                    />
+                  </div>
+                ))}
             </div>
           </div>
 
           {/* Contact Us */}
-          <Contact bgcolor={ProjectData.bgTo ?? "#10040E"} />
+          <Contact bgcolor={ServiceData.bgTo ?? "#10040E"} />
         </main>
       )}
     </>
   );
 };
 
-export default Project;
+export default Service;

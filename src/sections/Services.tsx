@@ -39,6 +39,7 @@ const Services: NextPage = () => {
               title="Game Development"
               description="We leverage our expertise as Unity developers to create great games or rapid prototypes"
               altText="Game Development Service"
+              link="/services/gamedevelopment"
             />
           </div>
           <div className="flex w-full items-center justify-center">
@@ -48,6 +49,7 @@ const Services: NextPage = () => {
               title="Mobile Development"
               description="We provide advice and development services to get the most out of your app"
               altText="Mobile Development Service"
+              link="/services/mobile"
             />
           </div>
           <div className="flex w-full items-center justify-center">
@@ -57,6 +59,7 @@ const Services: NextPage = () => {
               title="Monetization"
               description="We can integrate several different ad-networks and IAPs to help monetise your game"
               altText="Monetization Service"
+              link="/services/monetization"
             />
           </div>
           <div className="flex w-full items-center justify-center">
@@ -66,6 +69,7 @@ const Services: NextPage = () => {
               title="Game Design, Advice & Guidance"
               description="We work closely with our collaborators to ensure their vision aligns with their audience expectations and project scope"
               altText="Game Design Service"
+              link="/services/gamedesign"
             />
           </div>
         </div>

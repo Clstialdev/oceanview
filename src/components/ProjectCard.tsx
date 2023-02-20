@@ -5,7 +5,7 @@ import { ThreeDeeCardWrapper, SheenEffect } from "./ThreeDeeCardWrapper";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 interface ProjectCardProps {
-  project: { link: string; logo?: string; image: string; name?: string};
+  project: { link: string; logo?: string; image: string; name?: string };
 }
 
 const ProjectCard: NextPage<ProjectCardProps> = ({ project }) => {
@@ -18,7 +18,7 @@ const ProjectCard: NextPage<ProjectCardProps> = ({ project }) => {
           className="relative h-[330px] w-[240px] overflow-hidden rounded"
           ref={cardRef}
         >
-          <Link href={project.link}>
+          <Link href={project.link} rel="canonical">
             <SheenEffect
               cardRef={cardRef}
               strength={0.2}
@@ -31,7 +31,7 @@ const ProjectCard: NextPage<ProjectCardProps> = ({ project }) => {
             height={660} //this is for nextjs image optimization
             width={480} //this is for nextjs image optimization
             style={{ objectFit: "cover", height: "100%", width: "100%" }}
-            alt={(project.name ?? "loading...")+ " Background"}
+            alt={(project.name ?? "loading...") + " Background"}
             unselectable="on"
             draggable="false"
           />
@@ -44,7 +44,7 @@ const ProjectCard: NextPage<ProjectCardProps> = ({ project }) => {
                 height={1000} //this is for nextjs image optimization
                 width={1500} //this is for nextjs image optimization
                 style={{ objectFit: "contain", height: "100%", width: "100%" }}
-                alt={(project.name ?? "loading...")+ " Logo"}
+                alt={(project.name ?? "loading...") + " Logo"}
                 unselectable="on"
                 draggable="false"
               />
