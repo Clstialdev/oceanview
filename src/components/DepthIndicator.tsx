@@ -9,6 +9,7 @@ const DEPTH_INDICATOR = [
   { level: 185, value: "-125m", divId: "services" },
   { level: 387, value: "-357m", divId: "stats" },
   { level: 714, value: "-714m", divId: "projects" },
+  { level: 914, value: "-914m", divId: "team" },
   { level: 1071, value: "-1071m", divId: "testimonials" },
   { level: 2550, value: "-2550m", divId: "contact" },
 ];
@@ -23,7 +24,7 @@ const DepthIndicator: NextPage = () => {
       let nextDepth = 0;
       DEPTH_INDICATOR.map((depth) => {
         const section = document.getElementById(depth.divId);
-        if (currentPosition + 300 >= (section?.offsetTop ?? 0)) {
+        if (currentPosition + 500 >= (section?.offsetTop ?? 0)) {
           nextDepth = depth.level;
         }
       });

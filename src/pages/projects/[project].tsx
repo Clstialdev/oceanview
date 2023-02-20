@@ -294,6 +294,13 @@ const Project: NextPage = () => {
                     playing={true}
                     height={"100%"}
                     width={"100%"}
+                    playIcon={
+                      <img
+                        style={{ position: "absolute", height: "100px" }}
+                        src={"/projects/" + "play.svg"}
+                        alt="Thumbnail"
+                      />
+                    }
                     light={
                       <img src={ImageFolder + "video.webp"} alt="Thumbnail" />
                     }

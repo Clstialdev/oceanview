@@ -44,53 +44,51 @@ interface StatCounterProps {
 
 const StatCounter: NextPage<StatCounterProps> = ({ statsRef, stat }) => {
   const [value, setValue] = useState(0);
-  const [counting, setCounting] = useState(true);
+  const [counting, setCounting] = useState(false);
 
   useEffect(() => {
-    if (counting) {
-      const number =
-        stat.value.match(/\d+/) !== undefined
-          ? +stat.value.match(/\d+/)![0]
-          : 0;
+    const number =
+      stat.value.match(/\d+/) !== undefined ? +stat.value.match(/\d+/)![0] : 0;
 
-      const initialCounter = () => {
-        setCounting(true);
-        setValue(1);
-      };
-
-      const reset = () => {
-        setValue(number);
-        setTimeout(() => {
-          setCounting(false);
-        }, 700);
-      };
-
-      const counter = () => {
-        if (value < number) {
-          setTimeout(() => {
-            setValue(value + 1);
-          }, stat.countTimer);
-        }
-      };
-
-      if (value >= 1) {
-        counter();
+    const interval = setInterval(() => {
+      if (value < number) {
+        setValue((current) => current + 1);
       }
+    }, 10);
 
-      statsRef.current?.addEventListener("mouseenter", () => initialCounter());
-      statsRef.current?.addEventListener("mouseleave", () => reset());
+    const initialCounter = () => {
+      let value = 1;
+      const interval = setInterval(() => {
+        if (value < number) {
+          setValue(value);
+          value = value + 1;
+        }
+      }, 60);
+      clearInterval(interval);
+    };
 
-      return () => {
-        statsRef.current?.removeEventListener("mouseenter", () =>
-          initialCounter()
-        );
+    const calculatePosition = () => {
+      if (!counting) {
+        const currentPosition = window.scrollY;
 
-        statsRef.current?.removeEventListener("mouseleave", () =>
-          setValue(number)
-        );
-      };
-    }
-  }, [value, counting, stat.value, stat.countTimer, statsRef]);
+        const section = document.getElementById("stats");
+        if (currentPosition + 500 >= (section?.offsetTop ?? 0)) {
+          initialCounter();
+          setCounting(true);
+        } else {
+          setValue(0);
+          setCounting(false);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", () => calculatePosition());
+
+    return () => {
+      window.removeEventListener("scroll", () => calculatePosition());
+      clearInterval(interval);
+    };
+  });
 
   return (
     <div className="my-4 flex flex-col items-center sm:my-0">
