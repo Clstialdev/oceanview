@@ -56,8 +56,8 @@ const Project: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Ocean View Games - {ProjectData.name}</title>
-        <meta name="description" content={"Ocean View Games - " + ProjectData.name} />
+        <title>Ocean View Games</title>
+        <meta name="description" content={"Ocean View Games"}/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {projectId && ProjectData && (
@@ -82,7 +82,8 @@ const Project: NextPage = () => {
                   width: "100%",
                   marginTop: "-1px",
                 }}
-                alt={ProjectData.name + " Background"}
+                alt={(ProjectData.name ?? "loading...")+ " Background"}
+
                 unoptimized //this is to keep the image clarity
               />
             </motion.div>
@@ -324,7 +325,7 @@ const Project: NextPage = () => {
                       height: "100%",
                       width: "100%",
                     }}
-                    alt={ProjectData.name + " Image " + index}
+                    alt={(ProjectData.name ?? "loading...")+ " Image " + index.toString()}
                     unselectable="on"
                     draggable="false"
                   />
