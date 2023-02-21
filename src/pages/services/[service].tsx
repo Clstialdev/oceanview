@@ -41,15 +41,15 @@ const Service: NextPage = () => {
     }
   }, [serviceId]);
 
-  const heroRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: heroRef });
-  const y = useTransform(scrollYProgress, [0, 1], ["0", "500px"]);
+  // const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], [0, "500px"]);
   const y2 = useTransform(scrollYProgress, [0, 1], ["-100%", "300px"]);
   const scale = useTransform(scrollYProgress, [0, 1], ["1", "3"]);
   const letterSpacing = useTransform(scrollYProgress, [0, 1], ["2px", "90px"]);
   const opacity = useTransform(scrollYProgress, [0, 0.2], ["1", "0"]);
-  const blurValue = useTransform(scrollYProgress, [0.2, 1], ["0", "7px"]);
-  const darknessValue = useTransform(scrollYProgress, [0, 0.5], ["1", "0.6"]);
+  const blurValue = useTransform(scrollYProgress, [0.2, 1], [0, "7px"]);
+  const darknessValue = useTransform(scrollYProgress, [0, 0.5], [1, "0.6"]);
   const logoFilter = useMotionTemplate`blur(${blurValue}) brightness(${darknessValue})`;
   const bgFilter = useMotionTemplate`brightness(${darknessValue})`;
 
