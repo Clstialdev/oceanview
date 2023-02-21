@@ -42,6 +42,7 @@ const Service: NextPage = () => {
 
   // const heroRef = useRef(null);
   const { scrollYProgress } = useScroll();
+  scrollYProgress.set(0);
   const y = useTransform(scrollYProgress, [0, 1], [0, "500px"]);
   const y2 = useTransform(scrollYProgress, [0, 1], ["-100%", "300px"]);
   const scale = useTransform(scrollYProgress, [0, 1], ["1", "3"]);

@@ -42,7 +42,8 @@ const Project: NextPage = () => {
   }, [projectId]);
 
   // const heroRef = useRef(null);
-  const { scrollYProgress } = useScroll();
+  const { scrollYProgress, scrollY } = useScroll();
+  scrollYProgress.set(0);
   const y = useTransform(scrollYProgress, [0, 1], [0, "500px"]);
   const y2 = useTransform(scrollYProgress, [0, 1], ["-100%", "300px"]);
   const scale = useTransform(scrollYProgress, [0, 1], ["1", "3"]);
@@ -59,7 +60,7 @@ const Project: NextPage = () => {
     <>
       <Head>
         <title>{`Ocean View Games - ${pageTitle} `}</title>
-        <meta name="description" content={`Ocean View Games - ${pageTitle}`} />
+        <meta name="description" content={"Ocean View Games"} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {projectId && ProjectData && (
