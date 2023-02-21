@@ -59,7 +59,7 @@ const Project: NextPage = () => {
     <>
       <Head>
         <title>{`Ocean View Games - ${pageTitle} `}</title>
-        <meta name="description" content={"Ocean View Games"} />
+        <meta name="description" content={`Ocean View Games - ${pageTitle}`} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {projectId && ProjectData && (

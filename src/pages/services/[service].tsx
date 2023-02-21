@@ -10,7 +10,6 @@ import { useRouter } from "next/router";
 import ReactPlayer from "react-player/lazy";
 
 import SERVICES, { type ServiceData } from "../../data/Services";
-import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 import {
@@ -59,7 +58,7 @@ const Service: NextPage = () => {
     <>
       <Head>
         <title>{`Ocean View Games - ${pageTitle} `}</title>
-        <meta name="description" content="Ocean View Games is a ..." />
+        <meta name="description" content={`Ocean View Games - ${pageTitle}`} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {serviceId && ServiceData && (
@@ -82,7 +81,6 @@ const Service: NextPage = () => {
                   objectFit: "cover",
                   height: "100%",
                   width: "100%",
-                  marginTop: "-1px",
                 }}
                 alt="Beautiful Scenery of a vintage room looking out into the ocean through open double doors"
                 unoptimized //this is to keep the image clarity
