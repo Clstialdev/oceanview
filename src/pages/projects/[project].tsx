@@ -42,7 +42,7 @@ const Project: NextPage = () => {
   }, [projectId]);
 
   // const heroRef = useRef(null);
-  const { scrollYProgress, scrollY } = useScroll();
+  const { scrollYProgress } = useScroll();
   scrollYProgress.set(0);
   const y = useTransform(scrollYProgress, [0, 1], [0, "500px"]);
   const y2 = useTransform(scrollYProgress, [0, 1], ["-100%", "300px"]);
