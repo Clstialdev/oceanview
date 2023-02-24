@@ -28,7 +28,7 @@ const Hero: NextPage = () => {
         style={{ y, filter: bgFilter }}
         className="relative h-full w-full"
       >
-        {/* BG IMG */}
+        {/* BG IMG DESKTOP*/}
         <Image
           src="/HeroBG 70.webp"
           height={3000} //this is for nextjs image optimization
@@ -41,6 +41,26 @@ const Hero: NextPage = () => {
             marginTop: "-1px",
           }}
           alt="Ocean View Games"
+          className="hidden sm:block"
+          unoptimized //this is to keep the image clarity
+          placeholder="blur"
+          blurDataURL="/HeroBG 70 Blur.webp"
+        />
+
+        {/* BG IMG MOBILE*/}
+        <Image
+          src="/projects/runescape/3.webp"
+          height={3000} //this is for nextjs image optimization
+          width={3000} //this is for nextjs image optimization
+          priority={true}
+          style={{
+            objectFit: "cover",
+            height: "100%",
+            width: "100%",
+            marginTop: "-1px",
+          }}
+          alt="Ocean View Games"
+          className="sm:hidden"
           unoptimized //this is to keep the image clarity
           placeholder="blur"
           blurDataURL="/HeroBG 70 Blur.webp"
